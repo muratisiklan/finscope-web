@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FinScope - Manual Portfolio Analytics</title>
+    <title>FinScope - Manual Portfolio Tracker</title>
     <style>
         :root { --primary: #0052FF; --dark: #1A202C; --light: #F7F9FC; }
         body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; margin: 0; line-height: 1.6; color: var(--dark); background: var(--light); }
@@ -14,25 +14,25 @@
         nav { display: flex; justify-content: space-between; align-items: center; }
         .logo { font-weight: 800; font-size: 1.5rem; color: var(--primary); text-decoration: none; }
         .nav-links a { color: #718096; text-decoration: none; margin-left: 20px; font-weight: 500; }
-        .nav-links a:hover { color: var(--primary); }
 
         /* Hero */
         .hero { text-align: center; padding: 100px 20px; }
         h1 { font-size: 3rem; margin-bottom: 20px; line-height: 1.2; }
         .subtitle { font-size: 1.25rem; color: #718096; max-width: 600px; margin: 0 auto 40px; }
-        .btn { display: inline-block; background: var(--dark); color: white; padding: 15px 30px; border-radius: 12px; text-decoration: none; font-weight: 600; transition: transform 0.2s; }
-        .btn:hover { transform: translateY(-2px); opacity: 0.9; }
+        .btn { display: inline-block; background: var(--dark); color: white; padding: 15px 30px; border-radius: 12px; text-decoration: none; font-weight: 600; }
 
         /* Features */
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; padding: 60px 20px; }
         .card { background: white; padding: 30px; border-radius: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
-        .card h3 { color: var(--dark); margin-top: 0; font-size: 1.25rem; }
-        .card p { color: #718096; font-size: 0.95rem; }
+        .card h3 { color: var(--dark); margin-top: 0; }
         .icon { font-size: 2rem; margin-bottom: 15px; display: block; }
 
-        /* Support Section */
-        .support { background: white; padding: 60px 20px; text-align: center; border-top: 1px solid #E2E8F0; }
-        
+        /* FAQ */
+        .faq { padding: 60px 20px; max-width: 800px; margin: 0 auto; }
+        .faq h2 { text-align: center; margin-bottom: 40px; }
+        .faq-item { margin-bottom: 20px; border-bottom: 1px solid #E2E8F0; padding-bottom: 20px; }
+        .faq-question { font-weight: 700; font-size: 1.1rem; margin-bottom: 10px; color: var(--primary); }
+
         /* Footer */
         footer { text-align: center; padding: 40px; background: var(--dark); color: #A0AEC0; font-size: 0.9rem; }
         footer a { color: white; text-decoration: none; margin: 0 10px; }
@@ -46,7 +46,7 @@
                 <a href="#" class="logo">FinScope</a>
                 <div class="nav-links">
                     <a href="#features">Features</a>
-                    <a href="#support">Support</a>
+                    <a href="#faq">FAQ</a>
                 </div>
             </nav>
         </div>
@@ -54,9 +54,9 @@
 
     <section class="hero">
         <div class="container">
-            <h1>Private, Manual<br><span style="color: var(--primary);">Portfolio Analytics</span></h1>
-            <p class="subtitle">Track your investments on your own terms. No noisy feeds, no third-party tracking. You enter the data, we give you the insights.</p>
-            <a href="#" class="btn">Download on App Store</a>
+            <h1>Analytics for your<br><span style="color: var(--primary);">Manual Portfolio</span></h1>
+            <p class="subtitle">Enter your transactions manually. Track your net worth privately. No bank connections, no data selling.</p>
+            <a href="#" class="btn">Download for iOS</a>
         </div>
     </section>
 
@@ -64,28 +64,38 @@
         <div class="grid">
             <div class="card">
                 <span class="icon">✏️</span>
-                <h3>Total Control</h3>
-                <p>Manually input your transactions and asset prices. Test hypothetical scenarios with mock data or track your real portfolio privately.</p>
+                <h3>100% Manual Entry</h3>
+                <p>You control the data. Enter your own prices and quantities to simulate scenarios or track real assets without connecting your bank.</p>
             </div>
             <div class="card">
                 <span class="icon">📊</span>
-                <h3>Deep Analytics</h3>
-                <p>We crunch the numbers you give us. Get detailed breakdowns of your asset allocation, unrealized gains, and realized performance.</p>
+                <h3>Advanced Analytics</h3>
+                <p>We calculate realized gains, unrealized performance, and asset allocation based on the data you provide.</p>
             </div>
             <div class="card">
                 <span class="icon">🔒</span>
-                <h3>Private by Design</h3>
-                <p>We don't connect to your bank or broker. Your financial data stays isolated and is never sold to third parties.</p>
+                <h3>Privacy First</h3>
+                <p>We store your data securely but never verify your identity or access your financial institutions.</p>
             </div>
         </div>
     </section>
 
-    <section id="support" class="support">
-        <div class="container">
-            <h2>Support</h2>
-            <p>Need help with your account or have a feature request? Contact us directly.</p>
-            <br>
-            <a href="mailto:support@finscope.app" class="btn" style="background: var(--primary);">Contact Support</a>
+    <section id="faq" class="faq">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">Does FinScope connect to my bank?</div>
+            <div>No. FinScope is a manual tracker. You must enter every transaction (buy/sell) yourself. This ensures complete privacy and control over your data.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">What happens if I forget my password?</div>
+            <div><strong>Please record your password safely.</strong> Since we do not verify email addresses or store personal identity data, we cannot reset your password. If you lose it, you will lose access to your account.</div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Is the market data real-time?</div>
+            <div>No. You enter the "Current Price" manually to update your portfolio value. This is designed for long-term investors who want to check their net worth periodically, not day traders.</div>
         </div>
     </section>
 
@@ -94,7 +104,8 @@
             <p>&copy; 2025 FinScope. All rights reserved.</p>
             <div style="margin-top: 15px;">
                 <a href="privacy.html">Privacy Policy</a> • 
-                <a href="terms.html">Terms & Conditions</a>
+                <a href="terms.html">Terms & Conditions</a> • 
+                <a href="mailto:support@finscope.app">Support</a>
             </div>
         </div>
     </footer>
