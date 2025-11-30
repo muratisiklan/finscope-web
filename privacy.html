@@ -7,8 +7,9 @@
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         h1, h2 { color: #0052FF; }
+        h2 { margin-top: 35px; border-bottom: 2px solid #F7F9FC; padding-bottom: 10px; }
         a { color: #0052FF; }
-        p { margin-bottom: 1em; }
+        ul { margin-bottom: 1em; }
     </style>
 </head>
 <body>
@@ -16,38 +17,44 @@
     <h1>Privacy Policy</h1>
     <p><strong>Last updated: November 30, 2025</strong></p>
 
-    <p>FinScope ("we," "our," or "us") provides a manual portfolio tracking service. This Privacy Policy explains how we handle your information.</p>
+    <p>FinScope ("we," "our," or "us") operates a manual portfolio tracking application. This policy describes how we handle your data with a focus on privacy and data minimization.</p>
 
     <h2>1. Information We Collect</h2>
+    <p>We collect only the information necessary to provide our analytical services:</p>
     <ul>
-        <li><strong>Identity Data:</strong> We collect your <strong>Email Address</strong> and a chosen <strong>Username</strong> solely to create and secure your account.</li>
-        <li><strong>User-Generated Financial Data:</strong> We store the investment transactions (tickers, quantities, prices, dates) that you manually enter into the app. This data is stored on our secure servers to provide you with analytics across your devices.</li>
-        <li><strong>No Automatic Data Collection:</strong> We do <strong>not</strong> connect to bank accounts, brokerages, or third-party market data providers. All financial data in the app is provided by you.</li>
+        <li><strong>Account Information:</strong> We collect a <strong>Username</strong> and <strong>Email Address</strong> during registration. This is used solely to create your unique User ID in our database. We do not verify this email or use it for marketing.</li>
+        <li><strong>Financial Data:</strong> We store the investment transaction data (asset names, prices, quantities, dates) that you <em>manually enter</em>.</li>
+        <li><strong>Usage Data:</strong> We may collect anonymous crash reports or performance metrics to fix bugs.</li>
     </ul>
 
-    <h2>2. How We Use Your Information</h2>
-    <p>We use your data for the following purposes:</p>
-    <ul>
-        <li>To provide analytical calculations and portfolio visualizations based on your input.</li>
-        <li>To manage your account and subscription status via RevenueCat.</li>
-        <li>To maintain app performance and stability.</li>
-    </ul>
-    <p>We do <strong>not</strong> use your email for marketing campaigns, newsletters, or third-party advertising.</p>
+    <h2>2. No Market Data or Banking APIs</h2>
+    <p>We do <strong>not</strong> connect to any third-party banking APIs (like Plaid) or market data providers. We do not have access to your actual bank accounts or brokerage statements. All financial data in the app is user-generated.</p>
 
-    <h2>3. Third-Party Services</h2>
-    <p>We use the following trusted third-party services to operate the app:</p>
+    <h2>3. How We Use Your Information</h2>
     <ul>
-        <li><strong>RevenueCat:</strong> Handles subscription validation and purchase history processing. <a href="https://www.revenuecat.com/privacy">Read Policy</a>.</li>
-        <li><strong>Expo:</strong> Provides the underlying infrastructure for the mobile application. <a href="https://expo.dev/privacy">Read Policy</a>.</li>
+        <li>To calculate and display portfolio analytics (e.g., Net Worth, Asset Allocation).</li>
+        <li>To sync your manual entries across your devices.</li>
+        <li>To validate your Premium subscription status via RevenueCat.</li>
     </ul>
 
-    <h2>4. Data Retention & Deletion</h2>
-    <p>We retain your data only as long as you have an active account. You may delete your account and all associated data permanently at any time via the <strong>Profile &gt; Delete Account</strong> button within the app.</p>
+    <h2>4. Third-Party Services</h2>
+    <p>We share data with the following trusted partners solely for app functionality:</p>
+    <ul>
+        <li><strong>RevenueCat:</strong> Processes subscription receipts. We send an anonymous User ID to link your purchase to your account. <a href="https://www.revenuecat.com/privacy">Read Policy</a>.</li>
+        <li><strong>Expo:</strong> Provides the app infrastructure. <a href="https://expo.dev/privacy">Read Policy</a>.</li>
+    </ul>
 
-    <h2>5. Security</h2>
-    <p>We use industry-standard encryption to protect your account credentials and stored data. However, no method of transmission over the internet is 100% secure.</p>
+    <h2>5. Data Retention & Deletion</h2>
+    <p>Your data is retained as long as your account is active. You have the right to delete your account at any time:</p>
+    <ul>
+        <li>Go to <strong>Profile > Delete Account</strong> within the app.</li>
+        <li>This action <strong>permanently wipes</strong> your username, email, and all transaction data from our servers immediately. This cannot be undone.</li>
+    </ul>
 
-    <h2>6. Contact Us</h2>
-    <p>For privacy-related inquiries, please contact: <a href="mailto:support@finscope.app">support@finscope.app</a></p>
+    <h2>6. Security</h2>
+    <p>Your password is hashed (encrypted) before storage. We use SSL/TLS encryption for data transmission. However, since we do not verify emails, we cannot recover accounts if credentials are lost.</p>
+
+    <h2>7. Contact Us</h2>
+    <p>For privacy inquiries, please contact: <a href="mailto:support@finscope.app">support@finscope.app</a></p>
 </body>
 </html>
