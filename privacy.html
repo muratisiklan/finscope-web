@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - FinScope</title>
+    <title>Privacy Policy - Portfoyo</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         h1, h2 { color: #0052FF; }
@@ -15,62 +15,52 @@
 <body>
     <a href="index.html">&larr; Back to Home</a>
     <h1>Privacy Policy</h1>
-    <p><strong>Last updated: November 30, 2025</strong></p>
+    <p><strong>Last updated: December 04, 2025</strong></p>
 
-    <p>FinScope ("we," "our," or "us") operates a manual portfolio tracking application. This policy describes how we handle your data with a focus on privacy and data minimization.</p>
+    <p>Portfoyo ("we," "our," or "us") operates a privacy-focused manual portfolio tracking application. This policy describes how we handle your data with a strict focus on anonymity and data minimization.</p>
 
     <h2>1. Information We Collect</h2>
-    <p>We collect only the information necessary to provide our analytical services:</p>
+    <p>We adhere to the principle of <strong>Data Minimization</strong>. We do not collect your name, email address, phone number, or password.</p>
     <ul>
-        <li><strong>Account Information:</strong> We collect a <strong>Username</strong> and <strong>Email Address</strong> during registration. This is used solely to create your unique User ID in our database. We do not verify this email or use it for marketing.</li>
-        <li><strong>Financial Data:</strong> We store the investment transaction data (asset names, prices, quantities, dates) that you <em>manually enter</em>.</li>
-        <li><strong>Usage Data:</strong> We may collect anonymous crash reports or performance metrics to fix bugs.</li>
+        <li><strong>Anonymous Identity:</strong> When you install the app, we generate a random unique identifier (UUID) internally. This ID is used to sync your data but is not visible to you.</li>
+        <li><strong>Financial Data:</strong> We store the investment transaction data (asset names, prices, quantities, dates) you manually enter on our secure cloud servers. This data is associated <em>only</em> with your internal Anonymous ID.</li>
+        <li><strong>Device Data:</strong> We may collect anonymous crash reports or standard performance metrics (via Expo) to improve app stability.</li>
     </ul>
 
     <h2>2. No Market Data or Banking APIs</h2>
-    <p>We do <strong>not</strong> connect to any third-party banking APIs (like Plaid) or market data providers. We do not have access to your actual bank accounts or brokerage statements. All financial data in the app is user-generated.</p>
+    <p>We do <strong>not</strong> connect to any third-party banking APIs (like Plaid) or live market data feeds. We do not have access to your actual bank accounts, brokerage statements, or identity.</p>
 
     <h2>3. How We Use Your Information</h2>
     <ul>
-        <li>To calculate and display portfolio analytics (e.g., Net Worth, Asset Allocation).</li>
-        <li>To sync your manual entries across your devices.</li>
+        <li>To store and sync your portfolio data securely so you can access it via the app.</li>
+        <li>To calculate analytics (e.g., Net Worth, Asset Allocation) associated with your anonymous ID.</li>
         <li>To validate your Premium subscription status via RevenueCat.</li>
     </ul>
 
     <h2>4. Third-Party Services</h2>
-    <p>We share data with the following trusted partners solely for app functionality:</p>
+    <p>We share minimal data with the following trusted partners solely for app functionality:</p>
     <ul>
-        <li><strong>RevenueCat:</strong> Processes subscription receipts. We send an anonymous User ID to link your purchase to your account. <a href="https://www.revenuecat.com/privacy">Read Policy</a>.</li>
-        <li><strong>Expo:</strong> Provides the app infrastructure. <a href="https://expo.dev/privacy">Read Policy</a>.</li>
+        <li><strong>RevenueCat:</strong> Processes subscription receipts. We send your anonymous User ID to link your purchase to your app instance. <a href="https://www.revenuecat.com/privacy">Read Policy</a>.</li>
+        <li><strong>Expo:</strong> Provides the underlying app infrastructure and over-the-air updates. <a href="https://expo.dev/privacy">Read Policy</a>.</li>
     </ul>
 
     <h2>5. Data Retention & Deletion</h2>
-    <p>Your data is retained as long as your account is active. You have the right to delete your account at any time:</p>
     <ul>
-        <li>Go to <strong>Profile > Delete Account</strong> within the app.</li>
-        <li>This action <strong>permanently wipes</strong> your username, email, and all transaction data from our servers immediately. This cannot be undone.</li>
+        <li><strong>Retention:</strong> We retain your anonymous data on our servers for as long as the app is installed on your device.</li>
+        <li><strong>Deletion via App Removal:</strong> If you uninstall the application, the internal key required to access your data is destroyed. Consequently, your data becomes permanently inaccessible and is treated as deleted.</li>
+        <li><strong>Explicit Deletion:</strong> You can explicitly delete your account at any time via <strong>Profile > Delete Account</strong>. This action permanently wipes your Anonymous ID and all associated transaction data from our servers immediately.</li>
     </ul>
 
     <h2>6. Security</h2>
-    <p>Your password is hashed (encrypted) before storage. We use SSL/TLS encryption for data transmission. However, since we do not verify emails, we cannot recover accounts if credentials are lost.</p>
+    <p>We use SSL/TLS encryption for all data transmission. Since we do not store passwords or emails, there are no credentials to be stolen. However, because access to your data depends on the installation on your device, you are responsible for keeping your physical device secure.</p>
 
-    <h2>7. International Data Transfers</h2>
-    <p>Your information, including personal data, may be transferred to—and maintained on—computers located outside of your state, province, country, or other governmental jurisdiction where the data protection laws may differ than those from your jurisdiction. By using the Service, you consent to this transfer.</p>
-
-    <h2>8. Your Rights (KVKK & GDPR)</h2>
-    <p>Under applicable data protection laws (including KVKK and GDPR), you have the right to:</p>
+    <h2>7. Your Rights (KVKK & GDPR)</h2>
+    <p>Under applicable data protection laws (including KVKK and GDPR), you have rights regarding your data. However, because we do not collect personal identifiers and the Anonymous ID is not visible to you, <strong>we cannot verify your identity</strong> outside of the app application.</p>
     <ul>
-        <li>Request access to the personal data we hold about you.</li>
-        <li>Request the correction of inaccurate data.</li>
-        <li>Request the deletion of your account and data (Right to be Forgotten).</li>
-        <li>Object to the processing of your data.</li>
+        <li>To exercise your <strong>Right to Erasure</strong> or <strong>Right to Access</strong>, you must use the tools provided directly within the application (such as the "Delete Account" button). We cannot process these requests via email as we have no way to locate your specific data.</li>
     </ul>
-    <p>To exercise these rights, simply use the "Delete Account" feature in the app or contact us.</p>
 
-    <h2>9. Children's Privacy</h2>
-    <p>Our Service does not address anyone under the age of 18 ("Children"). We do not knowingly collect personally identifiable information from anyone under the age of 18. If you are a parent or guardian and you are aware that your child has provided us with Personal Data, please contact us.</p>
-
-    <h2>10. Contact Us</h2>
-    <p>For privacy inquiries, please contact: <a href="mailto:support@finscope.app">support@finscope.app</a></p>
+    <h2>8. Contact Us</h2>
+    <p>For privacy inquiries, please contact: <a href="mailto:support@portfoyo.app">support@portfoyo.app</a></p>
 </body>
 </html>
