@@ -3,64 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Portfoyo</title>
+    <title>Terms & Conditions - Portfoyo</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
         h1, h2 { color: #0052FF; }
         h2 { margin-top: 35px; border-bottom: 2px solid #F7F9FC; padding-bottom: 10px; }
-        a { color: #0052FF; }
         ul { margin-bottom: 1em; }
+        li { margin-bottom: 8px; }
+        .warning-box { background-color: #FFF5F5; border-left: 4px solid #E53E3E; padding: 15px; margin: 20px 0; color: #C53030; }
+        a { color: #0052FF; }
     </style>
 </head>
 <body>
     <a href="index.html">&larr; Back to Home</a>
-    <h1>Privacy Policy</h1>
+    <h1>Terms & Conditions</h1>
     <p><strong>Last updated: December 04, 2025</strong></p>
 
-    <p>Portfoyo ("we," "our," or "us") operates a privacy-focused manual portfolio tracking application. This policy describes how we handle your data with a strict focus on anonymity and data minimization.</p>
+    <p>Please read these Terms and Conditions ("Terms") carefully before using the Portfoyo mobile application (the "Service"). By accessing or using the Service, you agree to be bound by these Terms.</p>
 
-    <h2>1. Information We Collect</h2>
-    <p>We adhere to the principle of <strong>Data Minimization</strong>. We do not collect your name, email address, phone number, or password.</p>
+    <h2>1. Eligibility</h2>
+    <p>You must be at least 18 years of age (or the age of majority in your jurisdiction) to use this Service. By using Portfoyo, you represent and warrant that you meet this age requirement.</p>
+
+    <h2>2. Nature of the Service (Manual Tracking)</h2>
+    <p>Portfoyo is strictly a <strong>manual portfolio analytics tool</strong>. It does not connect to brokerage accounts, banks, or live market data feeds. You acknowledge that:</p>
     <ul>
-        <li><strong>Anonymous Identity:</strong> When you install the app, we generate a random unique identifier (UUID) internally. This ID is used to sync your data but is not visible to you.</li>
-        <li><strong>Financial Data:</strong> We store the investment transaction data (asset names, prices, quantities, dates) you manually enter on our secure cloud servers. This data is associated <em>only</em> with your internal Anonymous ID.</li>
-        <li><strong>Device Data:</strong> We may collect anonymous crash reports or standard performance metrics (via Expo) to improve app stability.</li>
+        <li>All data (tickers, prices, quantities, dates) is manually entered by you.</li>
+        <li>The Service does not verify the accuracy of your input.</li>
+        <li>You may use the Service for hypothetical scenarios ("mock data") or real tracking at your own discretion.</li>
     </ul>
 
-    <h2>2. No Market Data or Banking APIs</h2>
-    <p>We do <strong>not</strong> connect to any third-party banking APIs (like Plaid) or live market data feeds. We do not have access to your actual bank accounts, brokerage statements, or identity.</p>
+    <h2>3. Disclaimer: No Financial Advice</h2>
+    <div class="warning-box">
+        <strong>IMPORTANT:</strong> The Service is for informational purposes only. We do not provide investment, legal, or tax advice.
+    </div>
+    <p>Any analytical outputs (e.g., "Net Return," "Unrealized P/L") are estimates based solely on the data you provide. We are not responsible for financial decisions made based on these calculations.</p>
 
-    <h2>3. How We Use Your Information</h2>
+    <h2>4. Account Security & Data Loss</h2>
+    <p>Portfoyo uses <strong>internal anonymous authentication</strong>. We do not collect emails, passwords, or phone numbers.</p>
     <ul>
-        <li>To store and sync your portfolio data securely so you can access it via the app.</li>
-        <li>To calculate analytics (e.g., Net Worth, Asset Allocation) associated with your anonymous ID.</li>
-        <li>To validate your Premium subscription status via RevenueCat.</li>
+        <li><strong>Device-Bound Data:</strong> Your portfolio data is stored on our secure cloud servers but is cryptographically tied to the specific installation on your device. You do not have visibility of this internal ID.</li>
+        <li><strong>Permanent Loss upon Deletion:</strong> If you delete the Portfoyo app, factory reset your phone, or lose your device, <strong>your portfolio data will be permanently lost</strong>. Since the internal ID is deleted with the app, we have no way to recover your account or link you to your previous data.</li>
     </ul>
 
-    <h2>4. Third-Party Services</h2>
-    <p>We share minimal data with the following trusted partners solely for app functionality:</p>
+    <h2>5. Subscriptions</h2>
+    <p>Portfoyo offers a free tier and a paid "Premium" subscription, managed via the Apple App Store or Google Play Store.</p>
     <ul>
-        <li><strong>RevenueCat:</strong> Processes subscription receipts. We send your anonymous User ID to link your purchase to your app instance. <a href="https://www.revenuecat.com/privacy">Read Policy</a>.</li>
-        <li><strong>Expo:</strong> Provides the underlying app infrastructure and over-the-air updates. <a href="https://expo.dev/privacy">Read Policy</a>.</li>
+        <li>Payment will be charged to your Apple ID or Google Play account at confirmation of purchase.</li>
+        <li>Subscription automatically renews unless canceled at least 24 hours before the end of the current period.</li>
+        <li>You can manage and cancel subscriptions in your device's Account Settings. We cannot cancel subscriptions or issue refunds directly.</li>
+        <li><strong>Restoring Purchases:</strong> If you reinstall the app, you can use the "Restore Purchases" button to regain Premium status. However, this <strong>does not</strong> restore your portfolio data, as the data connection is permanently severed upon app deletion.</li>
     </ul>
 
-    <h2>5. Data Retention & Deletion</h2>
-    <ul>
-        <li><strong>Retention:</strong> We retain your anonymous data on our servers for as long as the app is installed on your device.</li>
-        <li><strong>Deletion via App Removal:</strong> If you uninstall the application, the internal key required to access your data is destroyed. Consequently, your data becomes permanently inaccessible and is treated as deleted.</li>
-        <li><strong>Explicit Deletion:</strong> You can explicitly delete your account at any time via <strong>Profile > Delete Account</strong>. This action permanently wipes your Anonymous ID and all associated transaction data from our servers immediately.</li>
-    </ul>
+    <h2>6. Limitation of Liability</h2>
+    <p>In no event shall Portfoyo, its developers, or affiliates be liable for any indirect, incidental, or consequential damages (including loss of data or funds) arising from your use of the Service or reliance on its analytics.</p>
 
-    <h2>6. Security</h2>
-    <p>We use SSL/TLS encryption for all data transmission. Since we do not store passwords or emails, there are no credentials to be stolen. However, because access to your data depends on the installation on your device, you are responsible for keeping your physical device secure.</p>
+    <h2>7. Termination</h2>
+    <p>We reserve the right to modify, suspend, or discontinue the Service (or any part thereof) at any time with or without notice. We shall not be liable to you or to any third party for any modification, suspension, or discontinuation of the Service.</p>
 
-    <h2>7. Your Rights (KVKK & GDPR)</h2>
-    <p>Under applicable data protection laws (including KVKK and GDPR), you have rights regarding your data. However, because we do not collect personal identifiers and the Anonymous ID is not visible to you, <strong>we cannot verify your identity</strong> outside of the app application.</p>
-    <ul>
-        <li>To exercise your <strong>Right to Erasure</strong> or <strong>Right to Access</strong>, you must use the tools provided directly within the application (such as the "Delete Account" button). We cannot process these requests via email as we have no way to locate your specific data.</li>
-    </ul>
+    <h2>8. Changes to Terms</h2>
+    <p>We reserve the right to modify these Terms at any time. Your continued use of the Service after changes constitutes acceptance of the new Terms.</p>
 
-    <h2>8. Contact Us</h2>
-    <p>For privacy inquiries, please contact: <a href="mailto:support@portfoyo.app">support@portfoyo.app</a></p>
+    <h2>9. Governing Law</h2>
+    <p>These Terms shall be governed by the laws of Turkey, without regard to its conflict of law provisions.</p>
+
+    <h2>10. Contact Us</h2>
+    <p>If you have questions about these Terms, please contact us at: <a href="mailto:portfoyo.app@outlook.com">portfoyo.app@outlook.com</a></p>
 </body>
 </html>
