@@ -1,45 +1,21 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Privacy Policy - Portfoyo</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 20px;
-        }
-
-        h1,
-        h2 {
-            color: #0052FF;
-        }
-
-        h2 {
-            margin-top: 35px;
-            border-bottom: 2px solid #F7F9FC;
-            padding-bottom: 10px;
-        }
-
-        a {
-            color: #0052FF;
-        }
-
-        ul {
-            margin-bottom: 1em;
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
+        h1, h2 { color: #0052FF; }
+        h2 { margin-top: 35px; border-bottom: 2px solid #F7F9FC; padding-bottom: 10px; }
+        a { color: #0052FF; }
+        ul { margin-bottom: 1em; }
     </style>
 </head>
-
 <body>
     <a href="index.html">&larr; Back to Home</a>
     <h1>Privacy Policy</h1>
-    <p><strong>Last updated: December 19, 2025</strong></p>
+    <p><strong>Last updated: December 25, 2025</strong></p>
 
     <p>Portfoyo ("we," "our," or "us") operates a manual portfolio tracking application. This policy describes how we handle your data with a strict focus on privacy and data minimization.</p>
 
@@ -48,11 +24,10 @@
     <ul>
         <li><strong>Anonymous Identity:</strong> When you install the app, we generate a random unique identifier (UUID) internally. This ID is used to sync your data but is not visible to you.</li>
         <li><strong>Financial Data:</strong> We store the investment transaction data (asset names, prices, quantities, dates) that you <em>manually enter</em> on our secure cloud servers. This data is associated <em>only</em> with your internal Anonymous ID.</li>
-        <li><strong>Usage Data:</strong> We may collect anonymous crash reports or performance metrics to improve app stability.</li>
     </ul>
 
-    <h2>2. No Market Data or Banking APIs</h2>
-    <p>We do <strong>not</strong> connect to any third-party banking APIs or market data providers. We do not have access to your actual bank accounts or brokerage statements. All financial data in the app is user-generated.</p>
+    <h2>2. No Connection to Private Banking APIs</h2>
+    <p>We do <strong>not</strong> connect to your private banking APIs or brokerage accounts. We do not have access to your actual bank statements or credentials. All financial data in the app is user-generated.</p>
 
     <h2>3. How We Use Your Information</h2>
     <ul>
@@ -62,36 +37,30 @@
     </ul>
 
     <h2>4. Third-Party Services</h2>
-    <p>We share minimal data with the following trusted partners solely for app functionality:</p>
+    <p>We share minimal data with trusted partners solely for app functionality:</p>
+    
+    <h3>A. Infrastructure & Analytics</h3>
     <ul>
         <li><strong>RevenueCat:</strong> Processes subscription receipts. We send your anonymous User ID to link your purchase to your app instance. <a href="https://www.revenuecat.com/privacy">Read Policy</a>.</li>
         <li><strong>Expo:</strong> Provides the underlying app infrastructure. <a href="https://expo.dev/privacy">Read Policy</a>.</li>
     </ul>
 
+    <h3>B. Exchange Rate Providers</h3>
+    <p>We query public APIs (Binance, CoinGecko, Frankfurter) to retrieve <strong>conversion rates</strong> (e.g., USD to TRY, BTC to USD). <strong>Note:</strong> We do NOT share your portfolio details, transaction history, or User ID with these providers. They receive only aggregate queries (e.g., "What is the current exchange rate for Bitcoin?").</p>
+
     <h2>5. Data Retention & Deletion</h2>
     <p>Your data is retained as long as the app is installed on your device. You have the right to delete your data at any time:</p>
     <ul>
-        <li><strong>Deletion via App Removal:</strong> If you uninstall the application, the internal key required to access your data is destroyed. Consequently, your data becomes permanently inaccessible.</li>
         <li><strong>Explicit Deletion:</strong> Go to <strong>Profile > Delete Account</strong> within the app. This action <strong>permanently wipes</strong> your Anonymous ID and all associated transaction data from our servers immediately. This cannot be undone.</li>
     </ul>
 
     <h2>6. Security</h2>
-    <p>We use SSL/TLS encryption for all data transmission. Since we do not collect personal identifiers like emails or passwords, there are no traditional credentials to be stolen. However, you are responsible for keeping your physical device secure to prevent unauthorized access to your app data.</p>
+    <p>We use SSL/TLS encryption for all data transmission. Since we do not collect personal identifiers like emails or passwords, there are no traditional credentials to be stolen.</p>
 
     <h2>7. International Data Transfers</h2>
-    <p>Your information, including anonymized financial data, may be maintained on computers located outside of your jurisdiction where data protection laws may differ. By using the Service, you consent to this transfer.</p>
+    <p>Your information may be maintained on computers located outside of your jurisdiction (e.g., cloud servers in Europe or the US). By using the Service, you consent to this transfer.</p>
 
-    <h2>8. Your Rights (KVKK & GDPR)</h2>
-    <p>Under applicable data protection laws (including KVKK and GDPR), you have rights regarding your data. However, because we do not collect personal identifiers and the Anonymous ID is not visible to you, <strong>we cannot verify your identity</strong> outside of the app itself.</p>
-    <ul>
-        <li>To exercise your <strong>Right to Erasure</strong> or <strong>Right to Access</strong>, you must use the tools provided directly within the application (such as the "Delete Account" button). We cannot process these requests via email as we have no way to locate your specific data without a personal identifier.</li>
-    </ul>
-
-    <h2>9. Children's Privacy</h2>
-    <p>Our Service does not address anyone under the age of 18 ("Children"). We do not knowingly collect personally identifiable information from anyone under the age of 18.</p>
-
-    <h2>10. Contact Us</h2>
+    <h2>8. Contact Us</h2>
     <p>For privacy inquiries, please contact: <a href="mailto:portfoyo.app@outlook.com">portfoyo.app@outlook.com</a></p>
 </body>
-
 </html>
