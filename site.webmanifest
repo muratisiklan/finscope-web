@@ -1,0 +1,14 @@
+{
+  "name": "Portfoyo",
+  "short_name": "Portfoyo",
+  "description": "All your investments in one private dashboard.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0A0E18",
+  "theme_color": "#0A0E18",
+  "icons": [
+    { "src": "/assets/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "/assets/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "/assets/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "maskable" }
+  ]
+}

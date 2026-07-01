@@ -1,66 +1,342 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Portfoyo</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        h1, h2 { color: #0052FF; }
-        h2 { margin-top: 35px; border-bottom: 2px solid #F7F9FC; padding-bottom: 10px; }
-        a { color: #0052FF; }
-        ul { margin-bottom: 1em; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Portfoyo</title>
+  <meta name="description" content="How Portfoyo collects, uses, protects, and shares your data. Read-only brokerage connections via SnapTrade, market data from Twelve Data, and your rights under GDPR, UK GDPR, CCPA/CPRA, and KVKK." />
+  <link rel="canonical" href="https://www.portfoyo.app/privacy.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0A0E18" />
+  <meta name="color-scheme" content="dark" />
+
+  <link rel="icon" href="favicon.ico?v=2" sizes="any" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg?v=2" />
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icon.png?v=2" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <a href="index.html">&larr; Back to Home</a>
-    <h1>Privacy Policy</h1>
-    <p><strong>Last updated: December 25, 2025</strong></p>
 
-    <p>Portfoyo ("we," "our," or "us") operates a manual portfolio tracking application. This policy describes how we handle your data with a strict focus on privacy and data minimization.</p>
+  <header class="topbar">
+    <div class="container bar">
+      <a href="index.html" class="wordmark"><span class="mark"><span>P</span></span><span data-brand>Portfoyo</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html#features">Features</a>
+          <a href="coverage.html">Coverage</a>
+          <a href="terms.html">Terms</a>
+        </nav>
+        <a href="index.html#join" class="btn btn-primary nav-cta">Join the waitlist</a>
+      </div>
+    </div>
+  </header>
 
-    <h2>1. Information We Collect</h2>
-    <p>We adhere to the principle of <strong>Data Minimization</strong>. We do not collect your name, email address, phone number, or password.</p>
-    <ul>
-        <li><strong>Anonymous Identity:</strong> When you install the app, we generate a random unique identifier (UUID) internally. This ID is used to sync your data but is not visible to you.</li>
-        <li><strong>Financial Data:</strong> We store the investment transaction data (asset names, prices, quantities, dates) that you <em>manually enter</em> on our secure cloud servers. This data is associated <em>only</em> with your internal Anonymous ID.</li>
-    </ul>
+  <main class="container">
+    <article class="legal">
+      <a class="legal-back" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back to home</a>
 
-    <h2>2. No Connection to Private Banking APIs</h2>
-    <p>We do <strong>not</strong> connect to your private banking APIs or brokerage accounts. We do not have access to your actual bank statements or credentials. All financial data in the app is user-generated.</p>
+      <header class="legal-head">
+        <span class="kicker">Legal</span>
+        <h1>Privacy Policy</h1>
+        <p class="legal-meta">Last updated: June 26, 2026 · Effective: June 26, 2026</p>
+        <p class="legal-summary">
+          <b>The short version.</b> Portfoyo is a portfolio tracker. We collect the minimum we need to run your
+          account: your email, the holdings and transactions you add or import, and what you choose to connect.
+          Brokerage links are made through <b>SnapTrade</b> and are strictly <b>read-only</b> — we can never trade or
+          move your money, and we never see or store your brokerage username or password. <b>We do not sell your
+          data, and we do not use advertising or third-party tracking.</b> You can export or permanently delete your
+          account and all of its data from inside the app at any time. This page explains the details.
+        </p>
+      </header>
 
-    <h2>3. How We Use Your Information</h2>
-    <ul>
-        <li>To calculate and display portfolio analytics (e.g., Net Worth, Asset Allocation).</li>
-        <li>To sync your manual entries securely across your devices.</li>
-        <li>To validate your Premium subscription status via RevenueCat using your Anonymous ID.</li>
-    </ul>
+      <nav class="toc" aria-label="Contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#who-we-are">1. Who we are</a></li>
+          <li><a href="#scope">2. Scope of this policy</a></li>
+          <li><a href="#data-we-collect">3. Data we collect</a></li>
+          <li><a href="#brokerage">4. Brokerage connections (SnapTrade)</a></li>
+          <li><a href="#market-data">5. Market data (Twelve Data)</a></li>
+          <li><a href="#how-we-use">6. How we use your data</a></li>
+          <li><a href="#legal-bases">7. Legal bases (GDPR/KVKK)</a></li>
+          <li><a href="#sharing">8. How we share data &amp; sub-processors</a></li>
+          <li><a href="#selling">9. We do not sell or track</a></li>
+          <li><a href="#transfers">10. International transfers</a></li>
+          <li><a href="#retention">11. Data retention</a></li>
+          <li><a href="#security">12. How we protect your data</a></li>
+          <li><a href="#rights">13. Your privacy rights</a></li>
+          <li><a href="#ccpa">14. U.S. / California rights</a></li>
+          <li><a href="#children">15. Children</a></li>
+          <li><a href="#website">16. The website &amp; waitlist</a></li>
+          <li><a href="#changes">17. Changes to this policy</a></li>
+          <li><a href="#contact">18. Contact us</a></li>
+        </ol>
+      </nav>
 
-    <h2>4. Third-Party Services</h2>
-    <p>We share minimal data with trusted partners solely for app functionality:</p>
-    
-    <h3>A. Infrastructure & Analytics</h3>
-    <ul>
-        <li><strong>RevenueCat:</strong> Processes subscription receipts. We send your anonymous User ID to link your purchase to your app instance. <a href="https://www.revenuecat.com/privacy">Read Policy</a>.</li>
-        <li><strong>Expo:</strong> Provides the underlying app infrastructure. <a href="https://expo.dev/privacy">Read Policy</a>.</li>
-    </ul>
+      <h2 id="who-we-are">1. Who we are</h2>
+      <p>
+        Portfoyo (“Portfoyo”, “we”, “us”, or “our”) is a personal investment portfolio tracking application for mobile
+        devices. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use
+        the Portfoyo mobile app and the website at <a href="https://www.portfoyo.app/">portfoyo.app</a> (together, the
+        “Service”).
+      </p>
+      <p>
+        For the purposes of the EU General Data Protection Regulation (“GDPR”), the UK GDPR, and the Turkish Personal
+        Data Protection Law No. 6698 (“KVKK”), Portfoyo is the <b>data controller</b> of the personal data described
+        here. You can reach us about any privacy matter at
+        <a href="mailto:support@portfoyo.app">support@portfoyo.app</a>.
+      </p>
 
-    <h3>B. Exchange Rate Providers</h3>
-    <p>We query public APIs (Binance, CoinGecko, Frankfurter) to retrieve <strong>conversion rates</strong> (e.g., USD to TRY, BTC to USD). <strong>Note:</strong> We do NOT share your portfolio details, transaction history, or User ID with these providers. They receive only aggregate queries (e.g., "What is the current exchange rate for Bitcoin?").</p>
+      <h2 id="scope">2. Scope of this policy</h2>
+      <p>
+        This policy covers the Portfoyo app and website. It does not cover the practices of third parties we integrate
+        with — such as your brokerage, SnapTrade, Twelve Data, Apple, or our infrastructure providers — except to
+        describe what data flows between us. Those parties operate under their own privacy policies, which we link to
+        in Section 8.
+      </p>
 
-    <h2>5. Data Retention & Deletion</h2>
-    <p>Your data is retained as long as the app is installed on your device. You have the right to delete your data at any time:</p>
-    <ul>
-        <li><strong>Explicit Deletion:</strong> Go to <strong>Profile > Delete Account</strong> within the app. This action <strong>permanently wipes</strong> your Anonymous ID and all associated transaction data from our servers immediately. This cannot be undone.</li>
-    </ul>
+      <h2 id="data-we-collect">3. Data we collect</h2>
+      <p>We collect only the data needed to provide the Service. This falls into the following categories.</p>
 
-    <h2>6. Security</h2>
-    <p>We use SSL/TLS encryption for all data transmission. Since we do not collect personal identifiers like emails or passwords, there are no traditional credentials to be stolen.</p>
+      <h3>a) Account &amp; identity data</h3>
+      <ul>
+        <li><b>Email address</b> — used to create your account, sign you in, verify your identity, and send essential service messages (e.g. email confirmation and password reset codes).</li>
+        <li><b>Password</b> — authentication is handled by our backend provider (Supabase Auth). Your password is stored only as a salted cryptographic hash; we never store or have access to your plaintext password.</li>
+        <li><b>Display name</b> (optional) — a name you may set for your profile. If you don’t set one, we default to the part of your email before the “@”.</li>
+      </ul>
 
-    <h2>7. International Data Transfers</h2>
-    <p>Your information may be maintained on computers located outside of your jurisdiction (e.g., cloud servers in Europe or the US). By using the Service, you consent to this transfer.</p>
+      <h3>b) Profile &amp; preferences</h3>
+      <ul>
+        <li>Your chosen <b>display currency</b> and in-app <b>settings/preferences</b>.</li>
+      </ul>
 
-    <h2>8. Contact Us</h2>
-    <p>For privacy inquiries, please contact: <a href="mailto:portfoyo.app@outlook.com">portfoyo.app@outlook.com</a></p>
+      <h3>c) Financial data you add or import</h3>
+      <ul>
+        <li><b>Manual holdings &amp; transactions</b> you enter — asset names/tickers, quantities, cost basis, buy/sell activity, prices, fees, and dates.</li>
+        <li><b>Imported brokerage data</b> (only if you connect an account — see Section 4) — your account names and types, an account mask (typically the last 4 digits), account currency, positions/holdings, transaction history, and account values.</li>
+        <li><b>Derived analytics</b> we calculate from the above — for example net worth, asset allocation, realized vs. unrealized performance, dividend projections, and daily portfolio value snapshots.</li>
+      </ul>
+
+      <h3>d) Subscription data</h3>
+      <ul>
+        <li>If you purchase a premium subscription, your purchase is processed by <b>Apple</b> and managed through <b>RevenueCat</b>. We receive your subscription <b>entitlement status</b> (e.g. tier, active/expired, renewal date) linked to your account. <b>We never receive your payment card or billing details</b> — those stay with Apple.</li>
+      </ul>
+
+      <h3>e) Technical &amp; operational data</h3>
+      <ul>
+        <li><b>Authentication tokens</b> — a session token issued at sign-in, stored securely on your device in the system keychain/keystore.</li>
+        <li><b>App &amp; update data</b> — the app uses Expo’s over-the-air update service, which processes limited technical information (such as app version and runtime/platform) to deliver the correct update.</li>
+        <li><b>Operational logs</b> — minimal server-side records of sync jobs and errors, used to keep syncing reliable and to diagnose problems.</li>
+      </ul>
+      <div class="legal-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="9"/></svg>
+        <p>Portfoyo does <b>not</b> include advertising SDKs, analytics trackers, or cross-app tracking, and does not ask for App Tracking Transparency permission. We do not build advertising profiles about you.</p>
+      </div>
+
+      <h2 id="brokerage">4. Brokerage connections (SnapTrade)</h2>
+      <p>
+        Connecting a brokerage is entirely optional — you can use Portfoyo with only manually entered data. If you do
+        choose to connect, the link is made through <b>SnapTrade</b>, a regulated financial-data aggregator.
+      </p>
+      <ul>
+        <li><b>Read-only by design.</b> Connections grant read-only access to your holdings and activity. Portfoyo cannot place trades, transfer funds, or make any changes to your brokerage account.</li>
+        <li><b>We never see your brokerage credentials.</b> You enter your brokerage login directly with SnapTrade (or your brokerage’s own secure login). Your username and password are never transmitted to, seen by, or stored by Portfoyo.</li>
+        <li><b>What we store</b> is a SnapTrade connection identifier and an access secret/token that lets us refresh your holdings on your behalf. This secret is treated as sensitive and is encrypted at rest.</li>
+        <li><b>You stay in control.</b> You can disconnect a brokerage at any time from inside the app, which revokes the authorization and stops further syncing.</li>
+      </ul>
+      <p>
+        SnapTrade processes your data under its own privacy policy:
+        <a href="https://snaptrade.com/privacy" rel="noopener" target="_blank">snaptrade.com/privacy</a>.
+      </p>
+
+      <h2 id="market-data">5. Market data (Twelve Data)</h2>
+      <p>
+        Prices, fundamentals, dividend schedules, and exchange-rate data are provided by <b>Twelve Data</b> under a
+        licensed business plan. This is general market data and is not specific to you: when we fetch a quote we send
+        only the security symbol — <b>we do not send your identity, account, or portfolio</b> to the market-data
+        provider. See Twelve Data’s policy at
+        <a href="https://twelvedata.com/privacy" rel="noopener" target="_blank">twelvedata.com/privacy</a>.
+      </p>
+
+      <h2 id="how-we-use">6. How we use your data</h2>
+      <ul>
+        <li>To create and authenticate your account and keep you signed in securely.</li>
+        <li>To store, sync, and display your holdings and transactions across your devices.</li>
+        <li>To calculate and present portfolio analytics (net worth, allocation, performance, dividends).</li>
+        <li>To import and keep your connected brokerage data up to date (if you connect one).</li>
+        <li>To manage premium subscriptions and unlock entitlements.</li>
+        <li>To maintain security, prevent abuse and fraud, and debug and improve reliability.</li>
+        <li>To respond to your support requests and communicate essential service notices.</li>
+        <li>To comply with legal obligations and enforce our Terms.</li>
+      </ul>
+      <p>We do not use your personal financial data to train advertising models or to profile you for marketing.</p>
+
+      <h2 id="legal-bases">7. Legal bases for processing (GDPR &amp; KVKK)</h2>
+      <p>Where the GDPR, UK GDPR, or KVKK applies, we rely on the following legal bases:</p>
+      <ul>
+        <li><b>Performance of a contract</b> — to provide the account, syncing, and analytics you sign up for.</li>
+        <li><b>Consent</b> — for optional actions such as connecting a brokerage account or subscribing to the waitlist. You may withdraw consent at any time.</li>
+        <li><b>Legitimate interests</b> — to secure the Service, prevent fraud and abuse, and improve reliability, balanced against your rights.</li>
+        <li><b>Legal obligation</b> — where we must retain or disclose data to comply with applicable law.</li>
+      </ul>
+
+      <h2 id="sharing">8. How we share data &amp; our sub-processors</h2>
+      <p>
+        We share personal data only with service providers (“sub-processors”) that help us operate the Service, and
+        only to the extent needed. They are contractually bound to protect your data and to use it solely to provide
+        their service to us.
+      </p>
+      <table>
+        <thead>
+          <tr><th>Provider</th><th>Purpose</th><th>Data involved</th><th>Policy</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><b>Supabase</b></td><td>Authentication, database, and backend hosting</td><td>Account, profile, financial &amp; derived data</td><td><a href="https://supabase.com/privacy" rel="noopener" target="_blank">supabase.com/privacy</a></td></tr>
+          <tr><td><b>SnapTrade</b></td><td>Brokerage account aggregation (if you connect one)</td><td>Connection token; imported accounts, holdings &amp; activity</td><td><a href="https://snaptrade.com/privacy" rel="noopener" target="_blank">snaptrade.com/privacy</a></td></tr>
+          <tr><td><b>Twelve Data</b></td><td>Market &amp; exchange-rate data</td><td>Security symbols only — no personal data</td><td><a href="https://twelvedata.com/privacy" rel="noopener" target="_blank">twelvedata.com/privacy</a></td></tr>
+          <tr><td><b>Apple</b></td><td>App distribution &amp; subscription payments</td><td>Purchase/billing handled by Apple; we receive entitlement status</td><td><a href="https://www.apple.com/legal/privacy/" rel="noopener" target="_blank">apple.com/legal/privacy</a></td></tr>
+          <tr><td><b>RevenueCat</b></td><td>Subscription management</td><td>Account identifier &amp; subscription status</td><td><a href="https://www.revenuecat.com/privacy" rel="noopener" target="_blank">revenuecat.com/privacy</a></td></tr>
+          <tr><td><b>Expo</b></td><td>App infrastructure &amp; over-the-air updates</td><td>Limited technical/runtime data</td><td><a href="https://expo.dev/privacy" rel="noopener" target="_blank">expo.dev/privacy</a></td></tr>
+        </tbody>
+      </table>
+      <p>
+        We may also disclose data if required to do so by law, regulation, legal process, or a valid governmental
+        request, or where necessary to protect the rights, property, or safety of Portfoyo, our users, or the public.
+        If Portfoyo is ever involved in a merger, acquisition, or sale of assets, we will notify you before your
+        personal data is transferred and becomes subject to a different privacy policy.
+      </p>
+
+      <h2 id="selling">9. We do not sell or “share” your data</h2>
+      <p>
+        We do <b>not</b> sell your personal information, and we do not “share” it for cross-context behavioral
+        advertising as those terms are defined under California law. We do not exchange your financial data for money
+        or other consideration.
+      </p>
+
+      <h2 id="transfers">10. International data transfers</h2>
+      <p>
+        Portfoyo and our providers may process and store data on servers located outside your country, including in the
+        European Union and the United States. Where personal data is transferred internationally, we rely on
+        appropriate safeguards such as the European Commission’s Standard Contractual Clauses or an adequacy decision.
+        By using the Service, you understand that your information may be processed in these locations.
+      </p>
+
+      <h2 id="retention">11. Data retention</h2>
+      <ul>
+        <li>We retain your account and portfolio data for as long as your account is active.</li>
+        <li>When you delete your account (<b>Profile → Delete Account</b> in the app), we permanently delete your profile, holdings, transactions, connections, and associated personal data from our live systems.</li>
+        <li>Residual copies in encrypted backups are purged on our regular backup-rotation cycle (typically within 30 days).</li>
+        <li>We may retain a minimal record where required for legal, accounting, fraud-prevention, or dispute-resolution purposes, kept only for as long as necessary.</li>
+      </ul>
+
+      <h3>When your account is closed or the Service ends</h3>
+      <p>In addition to voluntary deletion, your data may be affected in the following situations:</p>
+      <ul>
+        <li><b>You close your account.</b> Deletion is initiated by you in the app and is permanent for your portfolio data, as described above. Active brokerage links are revoked and SnapTrade authorizations are disconnected as part of this process.</li>
+        <li><b>We suspend, terminate, or shut down the Service.</b> We may restrict or end your access, or discontinue Portfoyo (in whole or in part), at our sole discretion and <b>with or without prior notice</b>. We are not required to give reasons or a grace period except where mandatory law requires. Unless we must retain information for legal or dispute-resolution reasons, we will delete or anonymize your personal data within a reasonable period (typically within 30 days) after access ends.</li>
+        <li><b>We discontinue the product.</b> If Portfoyo is shut down, we may do so without advance notice unless applicable law requires otherwise. Where practicable and not prohibited, we may notify users by email or in-app message, but we are not obligated to do so.</li>
+        <li><b>Waitlist emails.</b> If you only joined the waitlist and never created an app account, email us at <a href="mailto:support@portfoyo.app">support@portfoyo.app</a> to request removal at any time.</li>
+        <li><b>Subscriptions.</b> Deleting your Portfoyo account does not automatically cancel an Apple App Store subscription. You must cancel recurring billing separately in your Apple ID subscription settings.</li>
+      </ul>
+
+      <h2 id="security">12. How we protect your data</h2>
+      <ul>
+        <li><b>Encryption in transit</b> — all communication between the app and our servers uses TLS/HTTPS.</li>
+        <li><b>Encryption at rest</b> — data is stored on encrypted infrastructure, and sensitive secrets (such as your SnapTrade connection token) are additionally encrypted.</li>
+        <li><b>Secure session storage</b> — your sign-in session is stored in the device’s hardware-backed keychain/keystore, never in plaintext.</li>
+        <li><b>Row-level isolation</b> — database access rules ensure each user can only read and write their own data.</li>
+        <li><b>Least privilege</b> — brokerage access is read-only, and we request only the data we need.</li>
+      </ul>
+      <p>
+        No method of transmission or storage is perfectly secure, but we work to protect your data using
+        industry-standard safeguards and to continuously improve them.
+      </p>
+
+      <h2 id="rights">13. Your privacy rights</h2>
+      <p>
+        Depending on where you live, you may have some or all of the following rights regarding your personal data:
+      </p>
+      <ul>
+        <li><b>Access</b> — request a copy of the personal data we hold about you.</li>
+        <li><b>Rectification</b> — correct inaccurate or incomplete data (much of which you can edit directly in the app).</li>
+        <li><b>Erasure</b> — delete your account and data, which you can do yourself at any time in the app.</li>
+        <li><b>Portability</b> — receive your data in a structured, machine-readable format.</li>
+        <li><b>Restriction &amp; objection</b> — restrict or object to certain processing.</li>
+        <li><b>Withdraw consent</b> — withdraw consent where processing is based on it (e.g. disconnect a brokerage, unsubscribe from the waitlist).</li>
+      </ul>
+      <p>
+        To exercise any right, email <a href="mailto:support@portfoyo.app">support@portfoyo.app</a>. We will
+        respond within the timeframe required by applicable law (generally within 30 days). You also have the right to
+        lodge a complaint with your local data protection authority — in the EU/EEA with your national supervisory
+        authority, in the UK with the ICO, or in Türkiye with the KVKK Authority (KVKK Kurumu).
+      </p>
+
+      <h2 id="ccpa">14. Additional rights for U.S. &amp; California residents</h2>
+      <p>
+        If you are a California resident, the California Consumer Privacy Act (as amended by the CPRA) gives you the
+        right to know what personal information we collect and how we use it, to request access to and deletion of that
+        information, to correct inaccurate information, and to not be discriminated against for exercising your rights.
+        Because we do not sell or share personal information for cross-context behavioral advertising, there is no need
+        to opt out of such activity. You may exercise these rights by emailing us at the address above; we will verify
+        your request using your account email.
+      </p>
+
+      <h2 id="children">15. Children</h2>
+      <p>
+        Portfoyo is intended for adults and is not directed to children. The Service is not available to anyone under
+        18 years of age (or the age of majority in your jurisdiction). We do not knowingly collect personal data from
+        children. If you believe a child has provided us data, contact us and we will delete it.
+      </p>
+
+      <h2 id="website">16. The website &amp; the waitlist</h2>
+      <ul>
+        <li>The marketing website does not use advertising or third-party analytics cookies.</li>
+        <li>If you join the waitlist, we collect the <b>email address</b> you submit, plus minimal anti-spam metadata, so we can notify you about launch and early access. We use a hidden honeypot field to deter automated submissions.</li>
+        <li>You can unsubscribe or ask us to delete your waitlist email at any time by contacting us.</li>
+      </ul>
+
+      <h2 id="changes">17. Changes to this policy</h2>
+      <p>
+        We may update this Privacy Policy from time to time to reflect changes to the Service or legal requirements.
+        When we make material changes, we will update the “Last updated” date above and, where appropriate, notify you
+        in the app or by email. Your continued use of the Service after an update means you accept the revised policy.
+      </p>
+
+      <h2 id="contact">18. Contact us</h2>
+      <p>
+        For any questions, requests, or concerns about this policy or your data, contact us at
+        <a href="mailto:support@portfoyo.app">support@portfoyo.app</a>. We read every message and aim to
+        respond promptly.
+      </p>
+    </article>
+  </main>
+
+  <footer class="container">
+    <div class="footer-grid">
+      <a href="index.html" class="wordmark"><span class="mark"><span>P</span></span><span data-brand>Portfoyo</span></a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html#features">Features</a>
+        <a href="coverage.html">Coverage</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#join">Join waitlist</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:support@portfoyo.app">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> <span data-brand>Portfoyo</span> · All rights reserved</span>
+      <span class="disclaimer">Portfoyo is a portfolio tracking tool — not a broker, bank, or investment adviser — and does not provide investment advice. Brokerage connections are read-only. Market data is provided by third parties and may be delayed.</span>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

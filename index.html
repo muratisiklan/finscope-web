@@ -1,359 +1,736 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfoyo - Professional Portfolio Tracker</title>
-    <meta name="description" content="Track your net worth, realized gains, and asset allocation. The professional manual tracker for investors who want total control.">
-    
-    <meta property="og:title" content="Portfoyo" />
-    <meta property="og:image" content="assets/dashboard.jpg" />
-    <link rel="icon" type="image/png" href="assets/favicon.png">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <!-- ════════════════════════════════════════════════════════════════════
+       BRAND / SEO — to rebrand, find-and-replace "Portfoyo" in this file and
+       swap the BRAND const in the <script>. Shared styles live in styles.css.
+       SCREENSHOTS — drop your own into assets/ at the <!-- SHOT --> slots.
+       Sections without a screenshot use styled HTML preview panels.
+       ════════════════════════════════════════════════════════════════════ -->
+  <title>Portfoyo — All your investments in one private dashboard</title>
+  <meta name="description" content="Portfoyo brings your connected brokerages and manual holdings into one private dashboard — licensed live and end-of-day prices, real net worth, realized vs. unrealized performance, allocation, and dividend income. Join the iOS waitlist." />
+  <meta name="keywords" content="portfolio tracker, net worth tracker, brokerage sync, SnapTrade, dividend tracker, investment tracker app, realized gains, cost basis, asset allocation, iOS finance app" />
+  <link rel="canonical" href="https://www.portfoyo.app/" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0A0E18" />
+  <meta name="color-scheme" content="dark" />
 
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Portfoyo" />
+  <meta property="og:title" content="Portfoyo — Your whole portfolio, in one private dashboard" />
+  <meta property="og:description" content="Connect your brokerages, track manual assets. Licensed prices, real net worth, true performance, dividend income. Join the iOS waitlist." />
+  <meta property="og:url" content="https://www.portfoyo.app/" />
+  <meta property="og:image" content="https://www.portfoyo.app/assets/dashboard.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Portfoyo — Your whole portfolio, in one private dashboard" />
+  <meta name="twitter:description" content="Connect your brokerages, track manual assets. Licensed prices, real net worth, true performance, dividend income. Join the iOS waitlist." />
+  <meta name="twitter:image" content="https://www.portfoyo.app/assets/dashboard.jpg" />
 
-    <style>
-        :root {
-            --primary: #0052FF;
-            --primary-light: #4c82ff;
-            --primary-dark: #003BB5;
-            --bg: #F8FAFC;
-            --text: #0F172A;
-            --text-light: #64748B;
-            --border: #E2E8F0;
-            --bezel: #1F2937;
-            --glass: rgba(255, 255, 255, 0.7);
-        }
+  <link rel="icon" href="favicon.ico?v=2" sizes="any" />
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg);
-            background-image: 
-                radial-gradient(circle at 15% 10%, rgba(0, 82, 255, 0.03) 0%, transparent 40%),
-                radial-gradient(circle at 85% 90%, rgba(16, 185, 129, 0.03) 0%, transparent 40%);
-            color: var(--text);
-            line-height: 1.6;
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg?v=2" />
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icon.png?v=2" />
+  <link rel="manifest" href="site.webmanifest" />
 
-        h1, h2, h3 { letter-spacing: -0.02em; color: var(--text); }
-        p { color: var(--text-light); font-size: 1.1rem; }
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://hlczbeuisgfhdaqdfqae.supabase.co" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 
-        .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; position: relative; }
-        .section-padding { padding: 100px 0; }
-        
-        /* --- Buttons --- */
-        .btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            padding: 16px 32px; border-radius: 14px;
-            font-weight: 600; font-size: 1rem; text-decoration: none;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .btn-primary {
-            background-color: var(--primary); color: white;
-            box-shadow: 0 10px 25px -5px rgba(0, 82, 255, 0.4);
-            border: 1px solid transparent;
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            background-color: var(--primary-dark);
-            box-shadow: 0 20px 30px -10px rgba(0, 82, 255, 0.5);
-        }
-        .btn-black {
-            background-color: var(--text); color: white;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
-        }
-        .btn-black:hover { transform: translateY(-2px); box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.4); }
-
-        /* --- Navbar --- */
-        nav {
-            position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid rgba(255,255,255,0.5);
-            padding: 16px 0;
-        }
-        nav .container { display: flex; justify-content: space-between; align-items: center; }
-        .logo img { height: 36px; width: auto; display: block; }
-        .nav-links { display: none; gap: 32px; align-items: center; }
-        @media(min-width: 768px) { .nav-links { display: flex; } }
-        .nav-link { color: var(--text-light); text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: color 0.2s; }
-        .nav-link:hover { color: var(--primary); }
-
-        /* --- Hero Section --- */
-        .hero {
-            padding-top: 180px; padding-bottom: 100px;
-            display: grid; grid-template-columns: 1fr; gap: 60px;
-            align-items: center;
-        }
-        @media(min-width: 960px) { .hero { grid-template-columns: 1.1fr 1fr; text-align: left; } }
-
-        h1 {
-            font-size: clamp(3rem, 5vw, 4.5rem);
-            line-height: 1.05; font-weight: 800; margin-bottom: 24px; letter-spacing: -0.03em;
-        }
-        .gradient-text {
-            background: linear-gradient(135deg, var(--text) 0%, var(--primary) 60%, var(--primary-light) 100%);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .hero p { font-size: 1.25rem; margin-bottom: 30px; max-width: 540px; line-height: 1.6; color: var(--text-light); }
-        @media(max-width: 959px) { .hero p { margin: 0 auto 30px; } .hero { text-align: center; } }
-
-        /* Privacy Badge in Hero */
-        .hero-privacy {
-            display: flex; gap: 20px; align-items: center; margin-bottom: 40px;
-            font-weight: 500; color: var(--text-light); font-size: 0.95rem;
-        }
-        .hero-privacy span { display: flex; align-items: center; gap: 6px; }
-        .hero-privacy i { font-size: 18px; color: #10B981; } /* Green check */
-        @media(max-width: 959px) { .hero-privacy { justify-content: center; } }
-
-
-        /* --- Phone Frame & Blob --- */
-        .phone-container { position: relative; z-index: 10; display: flex; justify-content: center; }
-        .device-frame {
-            position: relative; z-index: 20;
-            background: var(--bezel);
-            border-radius: 48px; padding: 12px;
-            box-shadow: 
-                0 0 0 2px #3e4c5e inset,
-                0 50px 100px -20px rgba(0,0,0,0.5);
-            max-width: 310px; width: 100%;
-            transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        .device-frame:hover { transform: translateY(-10px) scale(1.02); }
-        .device-screen { display: block; width: 100%; height: auto; border-radius: 36px; overflow: hidden; background: white; }
-        
-        .blob {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            width: 150%; height: 150%; z-index: 1;
-            background: radial-gradient(circle at center, rgba(0, 82, 255, 0.15) 0%, rgba(0,0,0,0) 65%);
-            border-radius: 50%; filter: blur(60px);
-            opacity: 0.8;
-            animation: pulse 8s infinite ease-in-out;
-        }
-
-        @keyframes pulse {
-            0% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-            50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.6; }
-            100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; }
-        }
-
-        /* --- Value Props Grid --- */
-        .value-grid {
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px; margin-top: 40px;
-        }
-        .value-card {
-            background: white; padding: 36px; border-radius: 24px;
-            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.03); 
-            border: 1px solid rgba(255, 255, 255, 0.8);
-            text-align: left; transition: all 0.3s ease;
-        }
-        .value-card:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 20px 50px -12px rgba(0,0,0,0.08); 
-            border-color: rgba(0, 82, 255, 0.1);
-        }
-        
-        .icon-box {
-            width: 52px; height: 52px; background: rgba(0, 82, 255, 0.08); color: var(--primary);
-            border-radius: 14px; display: flex; align-items: center; justify-content: center;
-            margin-bottom: 24px;
-        }
-        .value-card h3 { font-size: 1.3rem; font-weight: 700; margin-bottom: 12px; }
-        .value-card p { font-size: 1rem; color: var(--text-light); line-height: 1.6; }
-
-        /* --- Features Sections --- */
-        .feature-block { display: grid; grid-template-columns: 1fr; gap: 80px; align-items: center; }
-        @media(min-width: 960px) { 
-            .feature-block { grid-template-columns: 1fr 1fr; }
-            .feature-block.reverse { direction: rtl; } 
-            .feature-block.reverse .content-side { direction: ltr; }
-        }
-        .tag {
-            display: inline-block; background: var(--text); color: white;
-            padding: 6px 14px; border-radius: 30px; font-weight: 700; font-size: 0.75rem;
-            text-transform: uppercase; letter-spacing: 1px; margin-bottom: 24px;
-        }
-        .feature-block h2 { font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; line-height: 1.1; }
-        .feature-block p { font-size: 1.15rem; color: var(--text-light); }
-
-        /* --- CTA Section --- */
-        .cta-section {
-            background: var(--text); color: white; border-radius: 32px;
-            padding: 100px 30px; text-align: center; margin: 80px auto 0;
-            position: relative; overflow: hidden;
-            box-shadow: 0 30px 60px -12px rgba(0,0,0,0.25);
-        }
-        .cta-section h2 { color: white; margin-bottom: 20px; font-size: 2.5rem; }
-        .cta-section p { color: rgba(255,255,255,0.7); max-width: 600px; margin: 0 auto 48px; font-size: 1.2rem; }
-
-        /* --- Footer --- */
-        footer { border-top: 1px solid var(--border); padding: 80px 0 40px; margin-top: 100px; background: white; }
-        .footer-logo { margin-bottom: 24px; display: inline-block; }
-        .footer-logo img { height: 36px; width: auto; }
-        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px; }
-        @media(max-width: 768px) { .footer-grid { grid-template-columns: 1fr; gap: 30px; } }
-        
-        .footer-col h4 { font-size: 0.8rem; text-transform: uppercase; color: var(--text-light); letter-spacing: 1px; margin-bottom: 24px; font-weight: 700; }
-        .footer-col a { display: block; color: var(--text); text-decoration: none; margin-bottom: 12px; font-weight: 500; transition: color 0.2s; font-size: 0.95rem; }
-        .footer-col a:hover { color: var(--primary); }
-        .bottom-bar { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); text-align: center; font-size: 0.85rem; color: var(--text-light); }
-
-    </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      { "@type": "SoftwareApplication", "name": "Portfoyo", "applicationCategory": "FinanceApplication", "operatingSystem": "iOS",
+        "description": "Bring your connected brokerages and manual holdings into one private dashboard with licensed live and end-of-day prices, real net worth, realized vs. unrealized performance, allocation, and dividend income.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }, "url": "https://www.portfoyo.app/" },
+      { "@type": "Organization", "name": "Portfoyo", "url": "https://www.portfoyo.app/", "logo": "https://www.portfoyo.app/assets/icon.png", "email": "support@portfoyo.app" },
+      { "@type": "FAQPage", "mainEntity": [
+        { "@type": "Question", "name": "When does Portfoyo launch?", "acceptedAnswer": { "@type": "Answer", "text": "We're in private beta now and launching on iOS soon. Join the waitlist and we'll email you the moment it's live — early members get first access." } },
+        { "@type": "Question", "name": "Which brokerages can I connect?", "acceptedAnswer": { "@type": "Answer", "text": "Portfoyo connects through SnapTrade, which supports 35+ brokerages across the US, Canada, Europe, Australia, and India — including Robinhood, Schwab, Fidelity, Vanguard, E*TRADE, Wealthsimple, Questrade, Webull, Trading 212, Interactive Brokers, and crypto exchanges like Coinbase and Kraken. See the full coverage list on our coverage page." } },
+        { "@type": "Question", "name": "Is my brokerage data safe?", "acceptedAnswer": { "@type": "Answer", "text": "Brokerage connections are read-only — Portfoyo can see your holdings and activity but can never trade or move money. Connections run through SnapTrade, a regulated aggregator, and your data is tied only to your account." } },
+        { "@type": "Question", "name": "Are prices live?", "acceptedAnswer": { "@type": "Answer", "text": "Prices come from Twelve Data on a licensed business plan. US stocks and ETFs are real-time during market hours; crypto, forex and commodities are real-time around the clock; and Europe, the UK, Canada, India and 70+ other exchanges are end-of-day at launch. Every holding shows its exact data status." } },
+        { "@type": "Question", "name": "Do I have to connect a brokerage?", "acceptedAnswer": { "@type": "Answer", "text": "No. You can track everything manually — stocks, crypto, cash, commodities, bonds, FX — and connect brokerages only if you want automatic syncing." } },
+        { "@type": "Question", "name": "Does it track dividends?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Portfoyo projects your annual dividend income, yield and yield-on-cost, shows a 12-month income chart, upcoming payouts, top payers, and an income-health read on concentration and sustainability." } },
+        { "@type": "Question", "name": "Will it cost anything?", "acceptedAnswer": { "@type": "Answer", "text": "The core tracker is free. A premium tier will come later and is still being shaped. As a thank-you, every waitlist member gets a code for 50% off the yearly plan when premium launches." } }
+      ] }
+    ]
+  }
+  </script>
 </head>
 <body>
 
-    <nav>
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="assets/logo-header.svg" alt="Portfoyo">
-            </a>
-            <div class="nav-links">
-                <a href="#features" class="nav-link">Features</a>
-                <a href="https://apps.apple.com/app/portfoyo-investment-tracker/id6756410602" class="btn btn-primary" style="padding: 10px 24px; font-size: 0.9rem;">Download</a>
-            </div>
-        </div>
-    </nav>
+  <header class="topbar">
+    <div class="container bar">
+      <a href="#" class="wordmark"><span class="mark"><span>P</span></span><span data-brand>Portfoyo</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#features">Features</a>
+          <a href="coverage.html">Coverage</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+        <a href="#join" class="btn btn-primary nav-cta">Join the waitlist</a>
+      </div>
+    </div>
+    <!-- Ambient ticker. Illustrative market motif, not live quotes or advice. -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track" id="ticker"></div>
+    </div>
+  </header>
 
-    <header class="container hero">
-        <div data-aos="fade-up" data-aos-duration="1000">
-            <h1>Your Entire Portfolio. <br> <span class="gradient-text">In One View.</span></h1>
-            <p>Track your complete financial life in a single, professional dashboard. Visualize your true net worth with precision and ease.</p>
-            
-            <div class="hero-privacy">
-                <span><i class="material-icons-round">check_circle</i> No Registration</span>
-                <span><i class="material-icons-round">check_circle</i> No Email Needed</span>
-            </div>
+  <!-- ── Hero ── -->
+  <section class="container hero">
+    <div>
+      <a class="hero-perk hero-anim d1" href="#pricing">
+        <span class="hp-tag">Launch offer</span>
+        <span class="hp-txt">Waitlist members get <b>50% off</b> the yearly plan at launch</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+      <span class="kicker hero-anim d1">Private beta · iOS</span>
+      <h1 class="hero-anim d2">All your accounts and assets, <span class="grad">in one private dashboard.</span></h1>
+      <p class="lead hero-anim d3">
+        <span data-brand>Portfoyo</span> connects your brokerage accounts and tracks your manual holdings in a single view —
+        licensed market prices, your real net worth, true realized vs. unrealized performance, and the dividends your portfolio earns.
+      </p>
 
-            <div style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: inherit;">
-                <a href="https://apps.apple.com/app/portfoyo-investment-tracker/id6756410602" class="btn btn-black">
-                    <span class="material-icons-round">apple</span>
-                    Download for iOS
-                </a>
-            </div>
+      <form class="waitlist hero-anim d4" id="join" data-source="hero" novalidate>
+        <div class="row">
+          <input type="email" name="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email address" required />
+          <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" class="btn btn-primary">Join the waitlist</button>
         </div>
-        
-        <div class="phone-container" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
-            <div class="blob"></div>
-            <div class="device-frame">
-                <img src="assets/dashboard.jpg" alt="Portfoyo Dashboard" class="device-screen">
-            </div>
-        </div>
-    </header>
+        <div class="form-status" role="status" aria-live="polite"></div>
+        <p class="form-note">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          NO SPAM — ONE EMAIL AT LAUNCH
+        </p>
+      </form>
 
-    <section class="container section-padding" style="padding-top: 0;">
-        <div class="value-grid">
-            <div class="value-card" data-aos="fade-up" data-aos-delay="0">
-                <div class="icon-box"><span class="material-icons-round" style="font-size: 26px;">pie_chart</span></div>
-                <h3>Unified Dashboard</h3>
-                <p>Consolidate your diverse investments. See everything in one cohesive, organized interface designed for clarity.</p>
-            </div>
-            <div class="value-card" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon-box"><span class="material-icons-round" style="font-size: 26px;">trending_up</span></div>
-                <h3>True Performance</h3>
-                <p>Don't just track prices. Track <strong>your</strong> performance. We calculate realized gains, cost basis, and ROI based on your specific history.</p>
-            </div>
-            <div class="value-card" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon-box"><span class="material-icons-round" style="font-size: 26px;">lock</span></div>
-                <h3>Private & Secure</h3>
-                <p>You control the data. No account creation means no personal data is ever stored or shared. Your privacy is our priority.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="features" class="container section-padding feature-block reverse">
-        <div class="phone-container" data-aos="zoom-in" data-aos-duration="1000">
-            <div class="blob" style="background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, rgba(0,0,0,0) 70%);"></div>
-            <div class="device-frame">
-                <img src="assets/allocation.jpg" alt="Asset Allocation" class="device-screen">
-            </div>
-        </div>
-        <div class="content-side" data-aos="fade-right" data-aos-duration="1000">
-            <span class="tag">Insight</span>
-            <h2>Master Your Allocation</h2>
-            <p>Is your portfolio balanced? Portfoyo gives you an instant visual breakdown of your asset allocation, helping you rebalance with confidence.</p>
-        </div>
-    </section>
-
-    <section class="container section-padding feature-block">
-        <div class="content-side" data-aos="fade-right" data-aos-duration="1000">
-            <span class="tag">Analytics</span>
-            <h2>Realized vs. Unrealized</h2>
-            <p>We separate your active holdings from your sold positions, giving you a clear picture of your actual trading success over time.</p>
-        </div>
-        <div class="phone-container" data-aos="zoom-in" data-aos-duration="1000">
-            <div class="blob" style="background: radial-gradient(circle at center, rgba(99, 102, 241, 0.15) 0%, rgba(0,0,0,0) 70%);"></div>
-            <div class="device-frame">
-                <img src="assets/performance.jpg" alt="Performance Metrics" class="device-screen">
-            </div>
-        </div>
-    </section>
-
-    <section class="container section-padding feature-block reverse">
-        <div class="phone-container" data-aos="zoom-in" data-aos-duration="1000">
-            <div class="blob" style="background: radial-gradient(circle at center, rgba(245, 158, 11, 0.15) 0%, rgba(0,0,0,0) 70%);"></div>
-            <div class="device-frame">
-                <img src="assets/prices.jpg" alt="Manual Pricing" class="device-screen">
-            </div>
-        </div>
-        <div class="content-side" data-aos="fade-right" data-aos-duration="1000">
-            <span class="tag">Control</span>
-            <h2>Total Data Control</h2>
-            <p>Manually update values to see how market shifts impact your total net worth instantly. Perfect for detailed scenario planning.</p>
-        </div>
-    </section>
-
-    <div class="container" id="download">
-        <div class="cta-section">
-            <h2>Start Tracking Today</h2>
-            <p>Download the app and add your first asset immediately. No email, no registration, no friction.</p>
-            <a href="https://apps.apple.com/app/portfoyo-investment-tracker/id6756410602" class="btn btn-primary" style="background: white; color: var(--text);">
-                <span class="material-icons-round">apple</span>
-                Download on App Store
-            </a>
-        </div>
+      <div class="trust hero-anim d5">
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> 70+ markets</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Read-only sync</span>
+        <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> No ads · no tracking</span>
+      </div>
     </div>
 
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col" style="max-width: 300px;">
-                    <a href="index.html" class="logo footer-logo">
-                        <img src="assets/logo-header.svg" alt="Portfoyo">
-                    </a>
-                    <p style="font-size: 0.9rem; opacity: 0.7;">The professional portfolio tracker. Built for investors who value clarity.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Product</h4>
-                    <a href="#features">Features</a>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <a href="privacy.html">Privacy Policy</a>
-                    <a href="terms.html">Terms of Use</a>
-                    <a href="mailto:portfoyo.app@outlook.com">Contact Support</a>
-                </div>
-            </div>
-            <div class="bottom-bar">
-                <p>&copy; 2025 Portfoyo. All rights reserved.</p>
-            </div>
+    <div class="stage hero-anim d3">
+      <div class="mini-timeline" role="img" aria-label="Build progress: Plan done, Build done, Testing in progress, Launch next">
+        <div class="mt-step done"><span class="mt-dot"></span><span class="mt-l">Plan</span></div>
+        <div class="mt-bar done"><i></i></div>
+        <div class="mt-step done"><span class="mt-dot"></span><span class="mt-l">Build</span></div>
+        <div class="mt-bar done"><i></i></div>
+        <div class="mt-step current"><span class="mt-dot"></span><span class="mt-l">Testing</span></div>
+        <div class="mt-bar"><i></i></div>
+        <div class="mt-step"><span class="mt-dot"></span><span class="mt-l">Launch</span></div>
+      </div>
+      <div class="phone-wrap">
+        <div class="ring"></div>
+        <div class="chip c1">
+          <div class="lab">Net worth</div>
+          <div class="num" data-count="248910" data-prefix="$">$0</div>
+          <svg class="spark" width="92" height="22" viewBox="0 0 92 22" fill="none">
+            <path d="M1 18 L14 14 L27 16 L40 9 L53 11 L66 5 L79 7 L91 2" stroke="var(--iris)" stroke-width="2" stroke-linecap="round" pathLength="1"/>
+          </svg>
         </div>
-    </footer>
+        <div class="chip c2">
+          <div class="lab">Today</div>
+          <div class="num up" data-count="1284" data-prefix="+$">+$0</div>
+          <svg class="spark" width="92" height="22" viewBox="0 0 92 22" fill="none">
+            <path d="M1 16 L14 17 L27 12 L40 14 L53 8 L66 10 L79 4 L91 3" stroke="var(--up)" stroke-width="2" stroke-linecap="round" pathLength="1"/>
+          </svg>
+        </div>
+        <!-- SHOT: home dashboard (mobile/src/app/home/index.tsx) -->
+        <div class="device">
+          <div class="device-screen">
+            <img src="assets/dashboard.jpg" alt="Portfoyo dashboard showing total net worth and holdings" width="540" height="1114" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({ once: true, offset: 50, duration: 800 });
-    </script>
+  <!-- ── Credibility strip ── -->
+  <section class="strip">
+    <div class="container row">
+      <div class="stat"><b data-count="35" data-suffix="+">0</b><span>Brokerages</span></div>
+      <div class="sep"></div>
+      <div class="stat"><b data-count="70" data-suffix="+">0</b><span>Markets</span></div>
+      <div class="sep"></div>
+      <div class="stat"><b data-count="8">0</b><span>Asset types</span></div>
+      <div class="sep"></div>
+      <div class="stat"><b>24/7</b><span>Crypto prices</span></div>
+      <div class="sep"></div>
+      <div class="stat"><b data-count="100" data-suffix="%">0</b><span>Read-only</span></div>
+      <div class="prov">Brokerage links by <b>SnapTrade</b> &nbsp;·&nbsp; Market data by <b>Twelve Data</b></div>
+    </div>
+  </section>
+
+  <!-- ── How it works ── -->
+  <section class="section container" id="features">
+    <div class="head reveal">
+      <span class="kicker">How it works</span>
+      <h2>From scattered accounts to <span style="color: var(--iris);">one clear picture</span></h2>
+      <p>Three steps to the truth behind your net worth — connected or manual, it all lands in the same clean view.</p>
+    </div>
+    <div class="steps">
+      <div class="connector" aria-hidden="true"><i></i></div>
+      <div class="step reveal">
+        <div class="step-no">01</div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12a9 9 0 1 1-6.2-8.6"/><path d="M12 7v5l3 2"/></svg></div>
+        <h3>Connect or add</h3>
+        <p>Link supported brokerages through <b>SnapTrade</b> — strictly read-only — or add any holding by hand: stocks, crypto, cash, commodities and more.</p>
+      </div>
+      <div class="step reveal s1">
+        <div class="step-no">02</div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>See the truth</h3>
+        <p>Licensed prices value every position with an honest freshness label, then Portfoyo computes your real net worth and true realized vs. unrealized performance.</p>
+      </div>
+      <div class="step reveal s2">
+        <div class="step-no">03</div>
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M16.2 7.8l-2.9 6.4-6.4 2.9 2.9-6.4z"/></svg></div>
+        <h3>Track &amp; decide</h3>
+        <p>Read your allocation, concentration, dividend income and monthly recaps — so you rebalance and act from a clear picture, not a guess.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ Feature deep-dives ════════ -->
+  <section class="section tight container">
+
+    <!-- 1 · Holding detail -->
+    <div class="feature rev">
+      <div class="media reveal">
+        <div class="shot-glow" style="background: radial-gradient(closest-side, rgba(124,140,255,0.45), transparent);"></div>
+        <!-- SHOT: holding detail (mobile/src/app/home/company/[name].tsx) -->
+        <div class="device"><div class="device-screen"><img src="assets/holding.jpg" alt="Apple holding detail: real-time price, your position, and key stats" width="540" height="1114" /></div></div>
+      </div>
+      <div class="reveal s1">
+        <span class="feat-no">01</span>
+        <span class="kicker">Every holding, in depth</span>
+        <h2>Tap any holding — see the whole story</h2>
+        <p>Open any position for a real-time, native-currency quote with an honest freshness label, your cost basis and today's move, plus the full buy/sell history behind it.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Real-time price, clearly tagged <b>real-time / end-of-day</b></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Your position — <b>value, today's change, weighted-avg cost</b></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Full <b>transaction history</b>, realized vs. unrealized split</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Key stats — <b>market cap, P/E, 52-week range, dividend yield</b></span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 2 · Brokerage sync -->
+    <div class="feature">
+      <div class="reveal">
+        <span class="feat-no">02</span>
+        <span class="kicker">Brokerage sync · SnapTrade</span>
+        <h2>Link your accounts, read-only</h2>
+        <p>Portfoyo connects through <b style="color:var(--paper)">SnapTrade</b>, a regulated aggregator, to import your accounts, positions, and buy/sell activity. The connection is strictly read-only — Portfoyo can never place a trade or move your money. Refresh on demand, and reconnect in a tap if a link ever drops.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span><b>35+ brokerages</b> across the US, Canada, Europe, Australia &amp; India</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Account types: Individual, Roth/Traditional IRA, Joint, Margin, 401(k), Crypto</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>On-demand refresh &amp; one-tap reconnect</span></li>
+        </ul>
+        <p style="margin-top:18px"><a href="coverage.html" style="color:var(--iris);font-weight:600;text-decoration:none">See every supported brokerage &rarr;</a></p>
+      </div>
+      <div class="media reveal s1">
+        <div class="shot-glow" style="background: radial-gradient(closest-side, rgba(61,220,151,0.4), transparent);"></div>
+        <div class="orbit" role="img" aria-label="Dozens of brokerages connect through SnapTrade with a strictly read-only link">
+          <span class="orbit-guide g1" aria-hidden="true"></span>
+          <span class="orbit-guide g2" aria-hidden="true"></span>
+          <div class="orbit-core">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2 4 5v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V5z"/><path d="M9 12l2 2 4-4"/></svg>
+            <b>Read-only</b>
+            <span>SnapTrade</span>
+          </div>
+          <div class="orbit-ring r1" aria-hidden="true">
+            <span class="ob" style="--a:0deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=robinhood.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#00C805;display:none">R</span></span></span>
+            <span class="ob" style="--a:72deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=schwab.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#00A0DF;display:none">C</span></span></span>
+            <span class="ob" style="--a:144deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=fidelity.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#368727;display:none">F</span></span></span>
+            <span class="ob" style="--a:216deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=coinbase.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#1652F0;display:none">C</span></span></span>
+            <span class="ob" style="--a:288deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=interactivebrokers.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#D81222;display:none">I</span></span></span>
+          </div>
+          <div class="orbit-ring r2" aria-hidden="true">
+            <span class="ob" style="--a:0deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=wealthsimple.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#000000;display:none">W</span></span></span>
+            <span class="ob" style="--a:51deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=trading212.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#00AABB;display:none">T</span></span></span>
+            <span class="ob" style="--a:103deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=vanguard.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#96151D;display:none">V</span></span></span>
+            <span class="ob" style="--a:154deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=webull.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#1A1A1A;display:none">W</span></span></span>
+            <span class="ob" style="--a:206deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=etoro.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#5B9C1E;display:none">E</span></span></span>
+            <span class="ob" style="--a:257deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=zerodha.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#387ED1;display:none">Z</span></span></span>
+            <span class="ob" style="--a:309deg"><span class="bub"><img src="https://www.google.com/s2/favicons?sz=128&amp;domain=questrade.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="fb" style="background:#00A4E4;display:none">Q</span></span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 · Dividend income -->
+    <div class="feature">
+      <div class="reveal">
+        <span class="feat-no">03</span>
+        <span class="kicker up">Dividend income</span>
+        <h2>The cash your portfolio pays you</h2>
+        <p>Most trackers stop at price. Portfoyo projects the income your holdings generate — what's coming, who pays it, and how healthy that stream is — so you can build toward cash flow, not just gains.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Projected <b>annual income</b>, yield &amp; yield-on-cost</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>12-month payout history &amp; an <b>upcoming payments</b> countdown</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Top payers ranked, with an <b>income-health</b> read on concentration</span></li>
+        </ul>
+      </div>
+      <div class="media reveal s1">
+        <div class="shot-glow" style="background: radial-gradient(closest-side, rgba(61,220,151,0.45), transparent);"></div>
+        <!-- SHOT: dividend income (mobile/src/app/home/dividends.tsx) -->
+        <div class="device"><div class="device-screen"><img src="assets/dividends.jpg" alt="Dividend income: projected annual income, yield, and upcoming payments" width="540" height="1114" /></div></div>
+      </div>
+    </div>
+
+    <!-- 4 · Allocation -->
+    <div class="feature rev">
+      <div class="media reveal">
+        <div class="shot-glow" style="background: radial-gradient(closest-side, rgba(61,220,151,0.45), transparent);"></div>
+        <!-- SHOT: holdings allocation (mobile/src/app/home/portfolio.tsx) -->
+        <div class="device"><div class="device-screen"><img src="assets/allocation.jpg" alt="Asset and sector allocation breakdown" width="540" height="1114" /></div></div>
+      </div>
+      <div class="reveal s1">
+        <span class="feat-no">04</span>
+        <span class="kicker">Allocation &amp; concentration</span>
+        <h2>See exactly how you're balanced</h2>
+        <p>An instant visual breakdown by asset class, sector, and account, across everything you hold. Switch the donut between views and read your concentration at a glance — so you rebalance from a clear picture instead of a guess.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Donut by <b>position, asset type, or sector</b></span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Concentration stats — <b>Top &amp; Top 3</b> weight</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Breakdown by account, all in one place</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 5 · True P/L -->
+    <div class="feature">
+      <div class="reveal">
+        <span class="feat-no">05</span>
+        <span class="kicker up">Performance</span>
+        <h2>Realized vs. unrealized, never mixed</h2>
+        <p>Active holdings stay separate from positions you've already sold — so you see how your open portfolio is doing and how your past decisions actually played out. Cost basis is computed as a weighted average from your real ledger, not a guess.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span><b>Open vs. closed</b> positions, each with its own P/L</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Weighted-average cost basis &amp; ROI</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Performance history charted over time</span></li>
+        </ul>
+      </div>
+      <div class="media reveal s1">
+        <div class="shot-glow" style="background: radial-gradient(closest-side, rgba(124,140,255,0.45), transparent);"></div>
+        <!-- SHOT: performance / insights (mobile/src/app/home/insights.tsx) -->
+        <div class="device"><div class="device-screen"><img src="assets/performance.jpg" alt="Performance metrics: realized and unrealized gains over time" width="540" height="1114" /></div></div>
+      </div>
+    </div>
+
+    <!-- 6 · Market data -->
+    <div class="feature rev">
+      <div class="media reveal">
+        <div class="shot-glow" style="background: radial-gradient(closest-side, rgba(232,184,115,0.4), transparent);"></div>
+        <div class="globe">
+          <div class="globe-h"><span class="t">Global markets</span><span class="t">Twelve Data</span></div>
+          <div class="tape">
+            <div class="tape-row">
+              <div class="tape-track">
+                <span class="gchip rt"><img class="fl" src="assets/flags/us.svg" alt="" width="18" height="13" loading="lazy">US Stocks</span><span class="gchip rt"><img class="fl" src="assets/flags/us.svg" alt="" width="18" height="13" loading="lazy">US ETFs</span><span class="gchip rt">₿ Crypto</span><span class="gchip rt">💱 Forex</span><span class="gchip rt">🛢️ Commodities</span><span class="gchip rt"><img class="fl" src="assets/flags/us.svg" alt="" width="18" height="13" loading="lazy">Pre / Post</span>
+                <span class="gchip rt" aria-hidden="true"><img class="fl" src="assets/flags/us.svg" alt="" width="18" height="13" loading="lazy">US Stocks</span><span class="gchip rt" aria-hidden="true"><img class="fl" src="assets/flags/us.svg" alt="" width="18" height="13" loading="lazy">US ETFs</span><span class="gchip rt" aria-hidden="true">₿ Crypto</span><span class="gchip rt" aria-hidden="true">💱 Forex</span><span class="gchip rt" aria-hidden="true">🛢️ Commodities</span><span class="gchip rt" aria-hidden="true"><img class="fl" src="assets/flags/us.svg" alt="" width="18" height="13" loading="lazy">Pre / Post</span>
+              </div>
+            </div>
+            <div class="tape-row">
+              <div class="tape-track rev">
+                <span class="gchip"><img class="fl" src="assets/flags/gb.svg" alt="" width="18" height="13" loading="lazy">LSE</span><span class="gchip"><img class="fl" src="assets/flags/de.svg" alt="" width="18" height="13" loading="lazy">Xetra</span><span class="gchip"><img class="fl" src="assets/flags/fr.svg" alt="" width="18" height="13" loading="lazy">Euronext</span><span class="gchip"><img class="fl" src="assets/flags/ch.svg" alt="" width="18" height="13" loading="lazy">SIX</span><span class="gchip"><img class="fl" src="assets/flags/ca.svg" alt="" width="18" height="13" loading="lazy">TSX</span><span class="gchip"><img class="fl" src="assets/flags/in.svg" alt="" width="18" height="13" loading="lazy">NSE · BSE</span><span class="gchip"><img class="fl" src="assets/flags/jp.svg" alt="" width="18" height="13" loading="lazy">Tokyo</span><span class="gchip"><img class="fl" src="assets/flags/hk.svg" alt="" width="18" height="13" loading="lazy">HKEX</span><span class="gchip"><img class="fl" src="assets/flags/br.svg" alt="" width="18" height="13" loading="lazy">B3</span><span class="gchip"><img class="fl" src="assets/flags/es.svg" alt="" width="18" height="13" loading="lazy">BME</span>
+                <span class="gchip" aria-hidden="true"><img class="fl" src="assets/flags/gb.svg" alt="" width="18" height="13" loading="lazy">LSE</span><span class="gchip" aria-hidden="true"><img class="fl" src="assets/flags/de.svg" alt="" width="18" height="13" loading="lazy">Xetra</span><span class="gchip" aria-hidden="true"><img class="fl" src="assets/flags/fr.svg" alt="" width="18" height="13" loading="lazy">Euronext</span><span class="gchip" aria-hidden="true"><img class="fl" src="assets/flags/ch.svg" alt="" width="18" height="13" loading="lazy">SIX</span><span class="gchip" aria-hidden="true"><img class="fl" src="assets/flags/ca.svg" alt="" width="18" height="13" loading="lazy">TSX</span><span class="gchip" aria-hidden="true"><img class="fl" src="assets/flags/in.svg" alt="" width="18" height="13" loading="lazy">NSE · BSE</span><span class="gchip" aria-hidden="true"><img class="fl" src="assets/flags/jp.svg" alt="" width="18" height="13" loading="lazy">Tokyo</span><span class="gchip" aria-hidden="true"><img class="fl" src="assets/flags/hk.svg" alt="" width="18" height="13" loading="lazy">HKEX</span><span class="gchip" aria-hidden="true"><img class="fl" src="assets/flags/br.svg" alt="" width="18" height="13" loading="lazy">B3</span><span class="gchip" aria-hidden="true"><img class="fl" src="assets/flags/es.svg" alt="" width="18" height="13" loading="lazy">BME</span>
+              </div>
+            </div>
+          </div>
+          <div class="globe-legend">
+            <span class="stat-pill live"><span class="d"></span>Real-time</span>
+            <span class="stat-pill eod"><span class="d"></span>End of day</span>
+            <span class="g-count">70+ markets</span>
+          </div>
+          <div class="mkt-foot">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h7l-1 8 10-12h-7z"/></svg>
+            <span>Every holding tagged — real-time or end-of-day, always visible.</span>
+          </div>
+        </div>
+      </div>
+      <div class="reveal s1">
+        <span class="feat-no">06</span>
+        <span class="kicker gold">Market data · Twelve Data</span>
+        <h2>Prices you can trust — and a label that's honest</h2>
+        <p>Quotes come from <b style="color:var(--paper)">Twelve Data</b> on a licensed business plan with the rights to display market data in-app. Coverage spans 70+ markets, and every holding shows exactly how fresh its price is — no pretending an end-of-day quote is live.</p>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span><b>Real-time</b> US stocks &amp; ETFs in market hours, plus pre/post-market</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span><b>24/7 real-time</b> crypto, forex &amp; commodities</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span><b>End-of-day</b> across 70+ global exchanges — Europe, the UK, Canada &amp; India</span></li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> <span>Every holding <b>tagged</b> with its exact freshness — no guessing</span></li>
+        </ul>
+        <p style="margin-top:18px"><a href="coverage.html#market-data" style="color:var(--iris);font-weight:600;text-decoration:none">See full market-data coverage &rarr;</a></p>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ── Everything else (compact) ── -->
+  <section class="section tight container">
+    <div class="head reveal">
+      <span class="kicker">All in one app</span>
+      <h2>And everything else your portfolio needs</h2>
+      <p>The depth is there when you want it — without leaving for another app.</p>
+    </div>
+    <div class="bento">
+      <div class="card wide reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/></svg></div>
+        <h3>Insights &amp; analytics</h3>
+        <p>Total return, profit factor, and your best and worst performers — the why behind the number, not just the number.</p>
+        <div class="chips mini">
+          <span class="stat-pill live"><span class="d"></span>Return +12.4%</span>
+          <span class="stat-pill eod"><span class="d"></span>Profit factor 2.8</span>
+          <span class="stat-pill live"><span class="d"></span>Best NVDA +31%</span>
+        </div>
+      </div>
+      <div class="card reveal s2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M3 12h3M18 12h3M12 3v3M12 18v3"/></svg></div>
+        <h3>Monthly recaps</h3>
+        <p>Capital in and out, your best exit by ROI, top buy and sell, and the positions you held with conviction.</p>
+      </div>
+      <div class="card reveal s3">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 17l6-6 4 4 7-7"/><path d="M14 7h7v7"/></svg></div>
+        <h3>Per-holding detail</h3>
+        <p>Price history, your position, "held across" accounts, fundamentals, and day &amp; 52-week trading stats.</p>
+      </div>
+      <div class="card reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Manual &amp; multi-asset</h3>
+        <p>Stocks, ETFs, crypto, commodities, bonds, FX, cash, options — by quick snapshot or a dated buy/sell ledger.</p>
+      </div>
+      <div class="card reveal s1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/></svg></div>
+        <h3>Multi-currency</h3>
+        <p>View your whole portfolio in USD, EUR, GBP, or TRY — converted at display time.</p>
+      </div>
+      <div class="card reveal s2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg></div>
+        <h3>Activity &amp; transactions</h3>
+        <p>A clean, filterable history of every buy and sell across your connected accounts.</p>
+      </div>
+      <div class="card reveal s3">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Privacy mode</h3>
+        <p>Hide every balance with one tap — check your portfolio anywhere without showing the numbers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Pricing & early-access reward ── -->
+  <section class="section tight container" id="pricing">
+    <div class="head reveal">
+      <span class="kicker">Pricing</span>
+      <h2>Free to track. A reward for being early.</h2>
+      <p>The whole tracker is free to use. A premium tier comes later — and as a waitlist member, you help shape it.</p>
+    </div>
+    <div class="included">
+      <div class="it reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Dashboard, performance &amp; net worth</div>
+      <div class="it reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Brokerage sync &amp; manual holdings</div>
+      <div class="it reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Realized vs. unrealized P/L</div>
+      <div class="it reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Allocation, dividends &amp; recaps</div>
+      <div class="it reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Live &amp; end-of-day prices</div>
+      <div class="it reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6 9 17l-5-5"/></svg> Multi-currency &amp; privacy mode</div>
+    </div>
+    <div class="perk reveal">
+      <span class="kicker" style="justify-content:center">Waitlist reward</span>
+      <div class="big">50% off</div>
+      <h2>the yearly plan — for joining early</h2>
+      <p>When premium launches, every waitlist member gets a code for <strong style="color:var(--paper)">50% off the annual plan</strong>. The premium feature set is still being shaped, and early members get the first say.</p>
+      <a href="#join" class="btn btn-primary">Claim my discount &rarr;</a>
+      <div class="fine">No card required now · code emailed at launch · applies to the yearly plan</div>
+    </div>
+  </section>
+
+  <!-- ── Security & privacy ── -->
+  <section class="section tight container" id="security">
+    <div class="head reveal">
+      <span class="kicker up">Built private</span>
+      <h2>Your portfolio is yours alone</h2>
+      <p>A finance app should earn trust before it asks for data. Here's how Portfoyo is built.</p>
+    </div>
+    <div class="sec-grid">
+      <div class="sec reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Read-only connections</h3>
+        <p>Brokerage links can view holdings and activity only — they can never place a trade or move your money.</p>
+      </div>
+      <div class="sec reveal s1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></div>
+        <h3>Sign in with Apple</h3>
+        <p>Sign in with Apple or email. Sessions are encrypted on-device, and each row of your data is isolated to your account.</p>
+      </div>
+      <div class="sec reveal s2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg></div>
+        <h3>Delete everything, anytime</h3>
+        <p>One tap in the app permanently wipes your account and all of its data from our servers. No emails, no waiting.</p>
+      </div>
+      <div class="sec reveal">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>We don't sell your data</h3>
+        <p>Your financial data is never sold or shared for advertising. Portfoyo makes money from premium, not from you.</p>
+      </div>
+      <div class="sec reveal s1">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></div>
+        <h3>Not a broker or adviser</h3>
+        <p>Portfoyo is a tracking tool. It doesn't hold your assets, execute trades, or give investment advice.</p>
+      </div>
+      <div class="sec reveal s2">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></div>
+        <h3>Licensed, encrypted data</h3>
+        <p>Market data is licensed for in-app display, and all traffic is encrypted in transit between your device and our servers.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Coverage teaser ── -->
+  <section class="section tight container">
+    <div class="cta reveal">
+      <span class="kicker" style="justify-content:center;">Coverage</span>
+      <h2>35+ brokerages. 70+ markets.</h2>
+      <p>See exactly which brokerages you can connect by region, and which markets and asset types stream live or end-of-day.</p>
+      <a href="coverage.html" class="btn btn-ghost" style="position:relative">Explore full coverage &rarr;</a>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="section tight container" id="faq">
+    <div class="head reveal"><span class="kicker">Good to know</span><h2>Questions, answered</h2></div>
+    <div class="faq">
+      <details class="reveal"><summary>When does it launch?</summary><p>We're in private beta now and launching on iOS soon. Join the waitlist and we'll email you the moment it's live — early members get first access.</p></details>
+      <details class="reveal"><summary>Which brokerages can I connect?</summary><p>Portfoyo connects through <strong>SnapTrade</strong>, which supports 35+ brokerages across the US, Canada, Europe, Australia, and India — including Robinhood, Schwab, Fidelity, Vanguard, E*TRADE, Wealthsimple, Questrade, Webull, Trading 212, Interactive Brokers, and crypto exchanges like Coinbase and Kraken. <a href="coverage.html">See the full list &rarr;</a></p></details>
+      <details class="reveal"><summary>Is my brokerage data safe?</summary><p>Connections are <strong>read-only</strong> — Portfoyo can see your holdings and activity but can never trade or move money. Linking runs through SnapTrade, a regulated aggregator, and your data is tied only to your account.</p></details>
+      <details class="reveal"><summary>Are the prices live?</summary><p>Prices come from <strong>Twelve Data</strong> on a licensed business plan. US stocks/ETFs are real-time during market hours; crypto, forex and commodities are real-time around the clock; and Europe, the UK, Canada, India and 70+ other exchanges are end-of-day at launch — every holding is labeled with its exact status. <a href="coverage.html#market-data">See coverage &rarr;</a></p></details>
+      <details class="reveal"><summary>Do I have to connect a brokerage?</summary><p>No. You can track everything manually — stocks, crypto, cash, commodities, bonds, FX — and only connect brokerages if you want automatic syncing.</p></details>
+      <details class="reveal"><summary>Does it track dividends?</summary><p>Yes. Portfoyo projects your annual income, yield and yield-on-cost, charts twelve months of payouts, counts down upcoming payments, ranks your top payers, and reads income health for concentration and sustainability.</p></details>
+      <details class="reveal"><summary>Will it cost anything?</summary><p>The core tracker is free. A premium tier will come later — we're still shaping exactly what's in it. As a thank-you, every waitlist member gets a code for <strong>50% off the yearly plan</strong> when premium launches.</p></details>
+      <details class="reveal"><summary>Do you sell my data?</summary><p>No. Your portfolio is yours. We don't sell or share your personal financial data, and you can delete your account and all of its data from inside the app at any time.</p></details>
+    </div>
+  </section>
+
+  <!-- ── Final CTA ── -->
+  <section class="section tight container">
+    <div class="cta reveal">
+      <span class="kicker" style="justify-content:center;">Early access</span>
+      <h2>Be first through the door</h2>
+      <p>Join the waitlist today. Early members get in before anyone else — plus a code for 50% off the yearly premium plan when it launches.</p>
+      <form class="waitlist" data-source="footer-cta" novalidate>
+        <div class="row">
+          <input type="email" name="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email address" required />
+          <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" class="btn btn-primary">Join the waitlist</button>
+        </div>
+        <div class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="container">
+    <div class="footer-grid">
+      <a href="#" class="wordmark"><span class="mark"><span>P</span></span><span data-brand>Portfoyo</span></a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#features">Features</a>
+        <a href="coverage.html">Coverage</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#join">Join waitlist</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:support@portfoyo.app">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> <span data-brand>Portfoyo</span> · All rights reserved</span>
+      <span class="disclaimer">Portfoyo is a portfolio tracking tool — not a broker, bank, or investment adviser — and does not provide investment advice. Brokerage connections are read-only. Market data is provided by third parties and may be delayed; figures shown on this page are illustrative.</span>
+    </div>
+  </footer>
+
+  <script>
+    /* CONFIG — public, client-safe (publishable key + project URL).
+       Rebrand: change BRAND and find-replace "Portfoyo" in the HTML. */
+    const BRAND = "Portfoyo";
+    const SUPABASE_URL = "https://hlczbeuisgfhdaqdfqae.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_5ulXNb9aQgww43l8T7EvkA_UXhc4FN2";
+
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.querySelectorAll("[data-brand]").forEach(el => { el.textContent = BRAND; });
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* Ticker tape — illustrative market motif (duplicated for a seamless loop). */
+    (function () {
+      const rows = [
+        ["AAPL", "228.41", 1.24], ["BTC", "67,120", -0.83], ["VOO", "512.30", 0.41],
+        ["MSFT", "430.12", 0.92], ["ETH", "3,540", 2.10], ["NVDA", "121.40", -1.12],
+        ["GOOGL", "178.22", 0.31], ["TSLA", "246.90", -2.41], ["SPY", "558.74", 0.54],
+        ["AMZN", "201.33", 0.72], ["GLD", "241.80", 0.18], ["EURUSD", "1.0834", -0.12],
+      ];
+      const cell = ([sym, px, d]) => {
+        const cls = d >= 0 ? "d-up" : "d-down";
+        const sign = d >= 0 ? "▲ +" : "▼ ";
+        return `<span class="tk"><b>${sym}</b>${px} <span class="${cls}">${sign}${Math.abs(d).toFixed(2)}%</span></span>`;
+      };
+      const html = rows.map(cell).join("");
+      const t = document.getElementById("ticker");
+      if (t) t.innerHTML = html + html;  // two passes → -50% loop is seamless
+    })();
+
+    /* Count-up figures (respects reduced motion). Runs once per element. */
+    function countUp(el) {
+      if (el.dataset.done) return;
+      el.dataset.done = "1";
+      const target = +el.dataset.count, prefix = el.dataset.prefix || "", suffix = el.dataset.suffix || "";
+      const render = v => { el.textContent = prefix + v.toLocaleString("en-US") + suffix; };
+      if (reduce) { render(target); return; }
+      const dur = 1400, start = performance.now();
+      (function tick(now) {
+        const p = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        render(Math.round(target * eased));
+        if (p < 1) requestAnimationFrame(tick);
+      })(start);
+    }
+    /* Hero figures are above the fold → start shortly after load, in step with the chart draw. */
+    document.querySelectorAll(".stage [data-count]").forEach(el => {
+      setTimeout(() => countUp(el), reduce ? 0 : 550);
+    });
+
+    /* Waitlist form → Supabase RPC. */
+    const utm = (() => {
+      const p = new URLSearchParams(location.search), o = {};
+      ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","ref"].forEach(k => { if (p.get(k)) o[k] = p.get(k); });
+      return o;
+    })();
+    async function joinWaitlist(email, source) {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/join_waitlist`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "apikey": SUPABASE_ANON_KEY, "Authorization": `Bearer ${SUPABASE_ANON_KEY}` },
+        body: JSON.stringify({ p_email: email, p_source: source || "landing", p_referrer: document.referrer || null, p_utm: utm, p_user_agent: navigator.userAgent }),
+      });
+      if (!res.ok) { let d = ""; try { d = (await res.json()).message || ""; } catch (_) {} throw new Error(d || `HTTP ${res.status}`); }
+    }
+    function wireForm(form) {
+      const status = form.querySelector(".form-status");
+      const button = form.querySelector("button[type=submit]");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = form.email.value.trim();
+        status.className = "form-status";
+        if (form.company.value) { return; }   // honeypot → drop bots silently
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+          status.textContent = "Please enter a valid email address."; status.className = "form-status err"; return;
+        }
+        const original = button.textContent;
+        button.disabled = true; button.textContent = "Joining…";
+        try {
+          await joinWaitlist(email, form.dataset.source);
+          status.textContent = "You're on the list — we'll email you at launch. 🎉"; status.className = "form-status ok";
+          form.email.value = ""; try { localStorage.setItem("joined_waitlist", "1"); } catch (_) {}
+        } catch (err) {
+          status.textContent = "Something went wrong — try again, or email support@portfoyo.app."; status.className = "form-status err";
+        } finally { button.disabled = false; button.textContent = original; }
+      });
+    }
+    document.querySelectorAll("form.waitlist").forEach(wireForm);
+    try {
+      if (localStorage.getItem("joined_waitlist")) {
+        const s = document.querySelector("#join .form-status");
+        if (s) { s.textContent = "You're already on the waitlist — thanks! 🎉"; s.className = "form-status ok"; }
+      }
+    } catch (_) {}
+
+    /* Scroll reveal + on-view count-ups + bar fills, via one observer. */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (!en.isIntersecting) return;
+        const el = en.target;
+        el.classList.add("in");
+        if (el.matches("[data-count]")) countUp(el);
+        el.querySelectorAll("[data-count]").forEach(countUp);
+        io.unobserve(el);
+      });
+    }, { threshold: 0.18, rootMargin: "0px 0px -8% 0px" });
+    document.querySelectorAll(".reveal, .steps, .strip [data-count]").forEach(el => io.observe(el));
+
+    /* Hero pointer-parallax — depth on the floating chips + screenshot (fine pointers only). */
+    (function () {
+      const stage = document.querySelector(".stage");
+      if (!stage || reduce || !matchMedia("(pointer:fine)").matches) return;
+      const chips = stage.querySelectorAll(".chip");
+      const device = stage.querySelector(".device");
+      let raf = 0;
+      stage.addEventListener("mousemove", (e) => {
+        const r = stage.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width / 2)) / r.width;
+        const dy = (e.clientY - (r.top + r.height / 2)) / r.height;
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          chips.forEach((c, i) => { const f = (i % 2 ? -1 : 1) * (i + 1) * 7; c.style.transform = `translate(${dx * f}px, ${dy * f}px)`; });
+          if (device) device.style.transform = `translate(${dx * 6}px, ${dy * 4}px)`;
+        });
+      });
+      stage.addEventListener("mouseleave", () => {
+        chips.forEach(c => { c.style.transform = ""; });
+        if (device) device.style.transform = "";
+      });
+    })();
+
+    /* Sticky-nav state + gentle deep-dive media parallax (rAF-throttled). */
+    (function () {
+      const topbar = document.querySelector(".topbar");
+      const media = reduce ? [] : document.querySelectorAll(".feature .media .device, .feature .media .panel, .feature .media .globe");
+      let raf = 0;
+      function onScroll() {
+        cancelAnimationFrame(raf);
+        raf = requestAnimationFrame(() => {
+          if (topbar) topbar.classList.toggle("scrolled", window.scrollY > 8);
+          const vh = window.innerHeight;
+          media.forEach(m => {
+            const r = m.getBoundingClientRect();
+            if (r.bottom < 0 || r.top > vh) return;
+            const off = (r.top + r.height / 2 - vh / 2) / vh;  // -0.5 .. 0.5
+            m.style.transform = `translateY(${(-off * 18).toFixed(1)}px)`;
+          });
+        });
+      }
+      window.addEventListener("scroll", onScroll, { passive: true });
+      onScroll();
+    })();
+
+    /* FAQ — smooth height accordion (native details stays the source of truth). */
+    if (!reduce) {
+      document.querySelectorAll(".faq details").forEach(d => {
+        const summary = d.querySelector("summary");
+        const body = d.querySelector("p");
+        if (!summary || !body) return;
+        summary.addEventListener("click", (e) => {
+          e.preventDefault();
+          if (d.open) {
+            body.style.height = body.scrollHeight + "px";
+            body.getBoundingClientRect();           // force reflow
+            body.style.height = "0px";
+            body.addEventListener("transitionend", function te() { d.open = false; body.style.height = ""; body.removeEventListener("transitionend", te); });
+          } else {
+            d.open = true;
+            const h = body.scrollHeight;
+            body.style.height = "0px";
+            body.getBoundingClientRect();            // force reflow
+            body.style.height = h + "px";
+            body.addEventListener("transitionend", function te() { body.style.height = ""; body.removeEventListener("transitionend", te); });
+          }
+        });
+      });
+    }
+  </script>
 </body>
 </html>

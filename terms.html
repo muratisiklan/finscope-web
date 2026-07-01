@@ -1,75 +1,381 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms & Conditions - Portfoyo</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 40px 20px; }
-        h1, h2 { color: #0052FF; }
-        h2 { margin-top: 35px; border-bottom: 2px solid #F7F9FC; padding-bottom: 10px; }
-        ul { margin-bottom: 1em; }
-        li { margin-bottom: 8px; }
-        .warning-box { background-color: #FFF5F5; border-left: 4px solid #E53E3E; padding: 15px; margin: 20px 0; color: #C53030; }
-        a { color: #0052FF; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Portfoyo</title>
+  <meta name="description" content="The terms governing your use of Portfoyo — a read-only portfolio tracker. Covers accounts, subscriptions, third-party services, market-data and no-financial-advice disclaimers, liability, and governing law." />
+  <link rel="canonical" href="https://www.portfoyo.app/terms.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0A0E18" />
+  <meta name="color-scheme" content="dark" />
+
+  <link rel="icon" href="favicon.ico?v=2" sizes="any" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg?v=2" />
+  <link rel="icon" type="image/png" href="assets/favicon.png?v=2" />
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/icon.png?v=2" />
+  <link rel="manifest" href="site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <a href="index.html">&larr; Back to Home</a>
-    <h1>Terms & Conditions</h1>
-    <p><strong>Last updated: December 25, 2025</strong></p>
 
-    <p>Please read these Terms and Conditions ("Terms") carefully before using the Portfoyo mobile application (the "Service"). By accessing or using the Service, you agree to be bound by these Terms.</p>
-
-    <h2>1. Eligibility</h2>
-    <p>You must be at least 18 years of age (or the age of majority in your jurisdiction) to use this Service. By using Portfoyo, you represent and warrant that you meet this age requirement.</p>
-
-    <h2>2. Nature of the Service</h2>
-    <p>Portfoyo is a <strong>manual portfolio analytics tool</strong>. You acknowledge that:</p>
-    <ul>
-        <li><strong>User Data is Manual:</strong> We do not connect to your bank accounts, brokerage accounts, or private wallets. All asset quantities and buy prices are manually entered by you.</li>
-        <li><strong>Analytics Only:</strong> The Service provides analytical tools to visualize the distribution and performance of the data you enter.</li>
-    </ul>
-
-    <h2>3. Exchange Rates & Asset Conversion</h2>
-    <p>The Service utilizes public third-party APIs (including <strong>Binance</strong>, <strong>CoinGecko</strong>, and <strong>Frankfurter</strong>) strictly for the purpose of <strong>currency conversion</strong> and <strong>asset normalization</strong>.</p>
-    <ul>
-        <li><strong>Conversion Utility:</strong> We do not display raw market data feeds. We use these providers solely to calculate the exchange rate between your assets (e.g., Gold, Crypto, USD) and your selected display currency (e.g., TRY).</li>
-        <li><strong>Synthetic Rates:</strong> Conversion rates may be calculated synthetically (e.g., Asset -> USD -> Target Currency) and are for estimation purposes only.</li>
-        <li><strong>No Guarantee:</strong> We do not guarantee the accuracy or timeliness of these conversion rates. You should not use these estimates for active trading or financial auditing.</li>
-    </ul>
-
-    <h2>4. Disclaimer: No Financial Advice</h2>
-    <div class="warning-box">
-        <strong>IMPORTANT:</strong> The Service is for informational purposes only. We do not provide investment, legal, or tax advice.
+  <header class="topbar">
+    <div class="container bar">
+      <a href="index.html" class="wordmark"><span class="mark"><span>P</span></span><span data-brand>Portfoyo</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html#features">Features</a>
+          <a href="coverage.html">Coverage</a>
+          <a href="privacy.html">Privacy</a>
+        </nav>
+        <a href="index.html#join" class="btn btn-primary nav-cta">Join the waitlist</a>
+      </div>
     </div>
-    <p>Any analytical outputs (e.g., "Net Return," "Unrealized P/L") are estimates based on the combination of your manual input and our conversion logic. We are not responsible for financial decisions made based on these calculations.</p>
+  </header>
 
-    <h2>5. Account Security & Data Loss</h2>
-    <p>Portfoyo uses <strong>internal anonymous authentication</strong>. We do not collect emails, passwords, or phone numbers.</p>
-    <ul>
-        <li><strong>Device-Bound Data:</strong> Your portfolio data is stored on our secure cloud servers but is cryptographically tied to the specific installation on your device.</li>
-        <li><strong>Permanent Loss upon Deletion:</strong> If you delete the Portfoyo app, factory reset your phone, or lose your device, <strong>your portfolio data will be permanently lost</strong>. Since the internal ID is deleted with the app, we have no way to recover your account.</li>
-    </ul>
+  <main class="container">
+    <article class="legal">
+      <a class="legal-back" href="index.html"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg> Back to home</a>
 
-    <h2>6. Subscriptions</h2>
-    <p>Portfoyo offers a free tier and a paid "Premium" subscription, managed via the Apple App Store or Google Play Store.</p>
-    <ul>
-        <li>Payment will be charged to your Apple ID or Google Play account at confirmation of purchase.</li>
-        <li>Subscription automatically renews unless canceled at least 24 hours before the end of the current period.</li>
-        <li>You can manage and cancel subscriptions in your device's Account Settings. We cannot cancel subscriptions or issue refunds directly.</li>
-    </ul>
+      <header class="legal-head">
+        <span class="kicker">Legal</span>
+        <h1>Terms of Service</h1>
+        <p class="legal-meta">Last updated: June 26, 2026 · Effective: June 26, 2026</p>
+        <p class="legal-summary">
+          <b>The short version.</b> Portfoyo is a tool that helps you track your investments in one place. It is
+          <b>not</b> a broker, bank, or financial adviser, and nothing in the app is investment, tax, or legal advice.
+          Brokerage connections are <b>read-only</b>. Market data comes from third parties and may be delayed or
+          inaccurate, so don’t rely on it to trade. You’re responsible for your account and your decisions. These
+          Terms are the full agreement between you and us — please read them.
+        </p>
+      </header>
 
-    <h2>7. Limitation of Liability</h2>
-    <p>In no event shall Portfoyo, its developers, or affiliates be liable for any indirect, incidental, or consequential damages (including loss of data or funds) arising from your use of the Service or reliance on its analytics.</p>
+      <nav class="toc" aria-label="Contents">
+        <h2>Contents</h2>
+        <ol>
+          <li><a href="#acceptance">1. Acceptance of these Terms</a></li>
+          <li><a href="#eligibility">2. Eligibility</a></li>
+          <li><a href="#service">3. What Portfoyo is (and isn’t)</a></li>
+          <li><a href="#accounts">4. Your account</a></li>
+          <li><a href="#license">5. License &amp; acceptable use</a></li>
+          <li><a href="#brokerage">6. Brokerage connections</a></li>
+          <li><a href="#market-data">7. Market data disclaimer</a></li>
+          <li><a href="#advice">8. No financial advice</a></li>
+          <li><a href="#subscriptions">9. Subscriptions &amp; billing</a></li>
+          <li><a href="#waitlist-offer">10. Waitlist &amp; launch offer</a></li>
+          <li><a href="#your-data">11. Your data &amp; content</a></li>
+          <li><a href="#third-parties">12. Third-party services</a></li>
+          <li><a href="#ip">13. Intellectual property</a></li>
+          <li><a href="#disclaimers">14. Disclaimers</a></li>
+          <li><a href="#liability">15. Limitation of liability</a></li>
+          <li><a href="#indemnity">16. Indemnification</a></li>
+          <li><a href="#termination">17. Termination &amp; discontinuation</a></li>
+          <li><a href="#changes">18. Changes to the Service or Terms</a></li>
+          <li><a href="#apple">19. Apple App Store terms</a></li>
+          <li><a href="#law">20. Governing law &amp; disputes</a></li>
+          <li><a href="#general">21. General</a></li>
+          <li><a href="#contact">22. Contact</a></li>
+        </ol>
+      </nav>
 
-    <h2>8. Changes to Terms</h2>
-    <p>We reserve the right to modify these Terms at any time. Your continued use of the Service after changes constitutes acceptance of the new Terms.</p>
+      <h2 id="acceptance">1. Acceptance of these Terms</h2>
+      <p>
+        These Terms of Service (“Terms”) form a binding agreement between you and Portfoyo (“Portfoyo”, “we”, “us”, or
+        “our”) governing your access to and use of the Portfoyo mobile app and the website at
+        <a href="https://www.portfoyo.app/">portfoyo.app</a> (together, the “Service”). By creating an account, joining the
+        waitlist, or otherwise using the Service, you agree to these Terms and to our
+        <a href="privacy.html">Privacy Policy</a>. If you do not agree, do not use the Service.
+      </p>
 
-    <h2>9. Governing Law</h2>
-    <p>These Terms shall be governed by the laws of Turkey, without regard to its conflict of law provisions.</p>
+      <h2 id="eligibility">2. Eligibility</h2>
+      <p>
+        You must be at least 18 years old (or the age of majority in your jurisdiction) and able to form a binding
+        contract to use the Service. By using Portfoyo, you represent and warrant that you meet these requirements and
+        that the information you provide is accurate.
+      </p>
 
-    <h2>10. Contact Us</h2>
-    <p>If you have questions about these Terms, please contact us at: <a href="mailto:support@portfoyo.app">support@portfoyo.app</a></p>
+      <h2 id="service">3. What Portfoyo is (and isn’t)</h2>
+      <p>
+        Portfoyo is a personal portfolio <b>tracking and analytics</b> tool. It lets you bring connected brokerage
+        accounts and manually entered holdings into a single dashboard and view analytics such as net worth, asset
+        allocation, realized and unrealized performance, and dividend income.
+      </p>
+      <ul>
+        <li>Portfoyo is <b>not</b> a broker-dealer, bank, custodian, money transmitter, exchange, or registered
+          investment adviser.</li>
+        <li>Portfoyo does <b>not</b> hold your money or securities, execute trades, or facilitate transactions.</li>
+        <li>All connections to brokerages are <b>read-only</b> (see Section 6).</li>
+        <li>Analytics are estimates derived from the data you provide or import and from third-party market data, and
+          are provided for informational purposes only.</li>
+      </ul>
+
+      <h2 id="accounts">4. Your account</h2>
+      <ul>
+        <li>You are responsible for maintaining the confidentiality of your login credentials and for all activity
+          under your account.</li>
+        <li>You agree to provide accurate information and to keep it up to date.</li>
+        <li>Notify us promptly at <a href="mailto:support@portfoyo.app">support@portfoyo.app</a> if you suspect
+          any unauthorized use of your account.</li>
+        <li>You may delete your account at any time from within the app (<b>Profile → Delete Account</b>), which
+          permanently removes your data as described in our <a href="privacy.html#retention">Privacy Policy</a>.</li>
+      </ul>
+
+      <h2 id="license">5. License &amp; acceptable use</h2>
+      <p>
+        Subject to these Terms, we grant you a limited, personal, non-exclusive, non-transferable, revocable license to
+        download and use the Portfoyo app on devices you own or control, for your own personal, non-commercial use.
+      </p>
+      <p>You agree not to:</p>
+      <ul>
+        <li>copy, modify, distribute, sell, sublicense, or create derivative works of the Service;</li>
+        <li>reverse-engineer, decompile, or attempt to extract source code, except where permitted by law;</li>
+        <li>access the Service through automated means, scrape it, or place unreasonable load on our infrastructure;</li>
+        <li>circumvent security, authentication, rate limits, or entitlement/subscription controls;</li>
+        <li>use the Service to break the law, infringe others’ rights, or transmit malware; or</li>
+        <li>misrepresent your identity or use someone else’s account or financial data without authorization.</li>
+      </ul>
+
+      <h2 id="brokerage">6. Brokerage connections</h2>
+      <ul>
+        <li>Connecting a brokerage is optional. When you connect one, the link is established through <b>SnapTrade</b>,
+          a third-party aggregator, and is strictly <b>read-only</b>: Portfoyo can read your holdings and activity but
+          can never place trades or move funds.</li>
+        <li>You authorize Portfoyo and SnapTrade to access and import your account information for the purpose of
+          displaying it in the app. You may revoke this authorization at any time by disconnecting the brokerage.</li>
+        <li>Your relationship with your brokerage is governed by your agreement with them. We are not responsible for
+          your brokerage’s services, availability, or accuracy, nor for SnapTrade’s services.</li>
+        <li>Imported data may be incomplete, delayed, or differ from your brokerage’s official records, which always
+          take precedence.</li>
+      </ul>
+
+      <h2 id="market-data">7. Market data disclaimer</h2>
+      <p>
+        Prices, fundamentals, dividend information, and exchange rates are provided by <b>Twelve Data</b> and other
+        third parties. Depending on the market and asset, this data may be real-time, delayed, or end-of-day, and it
+        may contain errors, gaps, or interruptions. Market data is provided “as is” for informational purposes only,
+        is <b>not</b> guaranteed to be accurate, complete, or timely, and must <b>not</b> be relied upon for trading or
+        other financial decisions. Any illustrative figures shown on our website are examples, not live quotes.
+      </p>
+
+      <h2 id="advice">8. No financial advice</h2>
+      <p>
+        Portfoyo does not provide investment, financial, tax, accounting, or legal advice, and nothing in the Service
+        constitutes a recommendation to buy, sell, or hold any security or to pursue any investment strategy. Analytics
+        and outputs (such as “net worth”, “unrealized P/L”, or “projected income”) are estimates and may be inaccurate.
+        You are solely responsible for your financial decisions, and you should consult a qualified professional before
+        making them. Investing involves risk, including the possible loss of principal.
+      </p>
+
+      <h2 id="subscriptions">9. Subscriptions &amp; billing</h2>
+      <ul>
+        <li>The core tracker is offered free of charge. We may offer a paid “Premium” subscription with additional
+          features.</li>
+        <li>Premium subscriptions are sold and billed through the <b>Apple App Store</b> and managed with the help of
+          <b>RevenueCat</b>. Payment is charged to your Apple ID upon confirmation of purchase.</li>
+        <li>Subscriptions <b>automatically renew</b> unless canceled at least 24 hours before the end of the current
+          period. Your Apple ID is charged for renewal within 24 hours before the period ends.</li>
+        <li>You can manage or cancel your subscription in your Apple ID account settings. We cannot cancel subscriptions
+          or issue refunds directly — refunds are handled by Apple under its policies.</li>
+        <li>Prices, features, and plans may change; we will give notice of material changes as required by the app
+          store and applicable law.</li>
+      </ul>
+
+      <h2 id="waitlist-offer">10. Waitlist &amp; launch offer</h2>
+      <p>
+        If you join the waitlist, we may email you about launch and early access. As a thank-you, waitlist members may
+        receive a code for a discount (e.g. 50% off the yearly Premium plan) once Premium becomes available. Any such
+        offer is subject to availability, may be limited in time, applies to the first eligible billing period unless
+        stated otherwise, cannot be combined with other offers unless stated, and may be modified or withdrawn before
+        Premium launches. The final scope, pricing, and features of Premium have not yet been finalized.
+      </p>
+
+      <h2 id="your-data">11. Your data &amp; content</h2>
+      <p>
+        You retain all rights to the holdings, transactions, and other content you add to or import into Portfoyo
+        (“Your Data”). You grant us a limited license to host, process, and display Your Data solely to operate and
+        provide the Service to you (for example, to sync it across your devices and compute your analytics). We handle
+        Your Data as described in our <a href="privacy.html">Privacy Policy</a>. You are responsible for the accuracy
+        of data you enter, and we recommend keeping your own records.
+      </p>
+
+      <h2 id="third-parties">12. Third-party services</h2>
+      <p>
+        The Service relies on third parties including SnapTrade, Twelve Data, Supabase, Apple, RevenueCat, and Expo.
+        Your use of those services through Portfoyo may be subject to their own terms and policies. We are not
+        responsible for the acts, omissions, content, availability, or accuracy of third-party services, and links to
+        third parties are provided for convenience only.
+      </p>
+
+      <h2 id="ip">13. Intellectual property</h2>
+      <p>
+        The Service — including its software, design, logos, text, graphics, and the “Portfoyo” name and branding — is
+        owned by Portfoyo and protected by intellectual-property laws. Except for the limited license granted to you in
+        Section 5, these Terms do not transfer any right, title, or interest in the Service to you. All rights not
+        expressly granted are reserved.
+      </p>
+
+      <h2 id="disclaimers">14. Disclaimers</h2>
+      <p>
+        THE SERVICE IS PROVIDED “AS IS” AND “AS AVAILABLE”, WITHOUT WARRANTIES OF ANY KIND, WHETHER EXPRESS, IMPLIED,
+        OR STATUTORY, INCLUDING WITHOUT LIMITATION IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR
+        PURPOSE, ACCURACY, AND NON-INFRINGEMENT. WE DO NOT WARRANT THAT THE SERVICE WILL BE UNINTERRUPTED, SECURE, OR
+        ERROR-FREE, THAT DATA WILL BE ACCURATE OR RELIABLE, OR THAT DEFECTS WILL BE CORRECTED. SOME JURISDICTIONS DO
+        NOT ALLOW THE EXCLUSION OF CERTAIN WARRANTIES, SO SOME OF THE ABOVE MAY NOT APPLY TO YOU.
+      </p>
+
+      <h2 id="liability">15. Limitation of liability</h2>
+      <p>
+        TO THE MAXIMUM EXTENT PERMITTED BY LAW, IN NO EVENT WILL PORTFOYO OR ITS DEVELOPER(S) BE LIABLE FOR ANY
+        INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, OR FOR ANY LOSS OF PROFITS, REVENUE, DATA,
+        OR INVESTMENT VALUE, ARISING OUT OF OR RELATING TO YOUR USE OF (OR INABILITY TO USE) THE SERVICE OR RELIANCE ON
+        ANY DATA OR ANALYTICS, WHETHER BASED ON WARRANTY, CONTRACT, TORT, OR ANY OTHER LEGAL THEORY, EVEN IF WE HAVE
+        BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. TO THE EXTENT PERMITTED BY LAW, OUR TOTAL AGGREGATE LIABILITY
+        FOR ALL CLAIMS RELATING TO THE SERVICE WILL NOT EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID US FOR THE
+        SERVICE IN THE 12 MONTHS BEFORE THE CLAIM, OR (B) USD 50. NOTHING IN THESE TERMS LIMITS LIABILITY THAT CANNOT
+        BE LIMITED UNDER APPLICABLE LAW.
+      </p>
+
+      <h2 id="indemnity">16. Indemnification</h2>
+      <p>
+        You agree to indemnify and hold harmless Portfoyo and its developer(s) from any claims, damages, liabilities,
+        and expenses (including reasonable legal fees) arising out of your misuse of the Service, your violation of
+        these Terms, or your violation of any law or the rights of a third party.
+      </p>
+
+      <h2 id="termination">17. Termination, suspension &amp; service discontinuation</h2>
+
+      <h3>Our right to suspend, terminate, or shut down (no notice required)</h3>
+      <p>
+        Portfoyo and its developers reserve the right, at our <b>sole and absolute discretion</b>, to suspend,
+        restrict, disable, or permanently terminate your access to the Service — or to discontinue, modify, or shut
+        down the Service (in whole or in part) — at any time, for any reason or for no reason, <b>with or without
+        prior notice</b>, and without liability to you for any resulting loss, including loss of data, access,
+        subscriptions, or anticipated benefits.
+      </p>
+      <p>This includes, without limitation, the right to:</p>
+      <ul>
+        <li>terminate or disable one, some, or all user accounts immediately;</li>
+        <li>revoke or change premium entitlements, beta access, or waitlist status;</li>
+        <li>disconnect brokerage integrations or remove features, regions, asset classes, or data feeds;</li>
+        <li>take the Service offline temporarily or permanently; and</li>
+        <li>refuse or cease providing the Service to any person or jurisdiction.</li>
+      </ul>
+      <p>
+        We are not obligated to provide reasons, refunds, compensation, data exports, or a grace period before taking
+        such action, except where applicable law expressly requires otherwise. Mandatory consumer-protection laws in
+        your country may still grant you certain non-waivable rights.
+      </p>
+      <p>
+        Grounds for action by us may include (but are not limited to) Terms violations, suspected abuse or fraud,
+        security incidents, excessive load on our systems, legal or regulatory requirements, requests from partners
+        (such as SnapTrade, Twelve Data, or Apple), operational or business decisions, or discontinuation of the
+        product.
+      </p>
+
+      <h3>Termination by you</h3>
+      <p>
+        You may stop using the Service at any time and may delete your account from <b>Profile → Delete Account</b>
+        in the app. Deleting your account does <b>not</b> automatically cancel an Apple App Store subscription — cancel
+        recurring billing separately in your Apple ID settings. See our
+        <a href="privacy.html#retention">Privacy Policy</a> for how your data is handled when you delete your account.
+      </p>
+
+      <h3>Effect of termination or discontinuation</h3>
+      <p>When your access ends — whether by your action or ours — the following applies immediately:</p>
+      <ul>
+        <li>all licenses granted to you under these Terms end;</li>
+        <li>you must stop using the app;</li>
+        <li>connected brokerage links are revoked and automatic syncing stops;</li>
+        <li>we may delete or anonymize your personal data as described in our Privacy Policy, except where we must retain data for legal, accounting, fraud-prevention, or dispute-resolution purposes;</li>
+        <li>we owe no refund for unused subscription time unless Apple’s policies or mandatory law requires it; and</li>
+        <li>provisions that by their nature should survive — including Sections 8 (No financial advice), 11 (Your data),
+          13 (Intellectual property), 14–16 (Disclaimers, Limitation of liability, Indemnification), and 20 (Governing law)
+          — survive termination.</li>
+      </ul>
+
+      <h3>Subscriptions and refunds</h3>
+      <p>
+        Premium subscriptions are billed by Apple. If we terminate or restrict your account, or discontinue the Service,
+        we do not owe you a refund for unused subscription time unless required by Apple’s policies or applicable law.
+        Refund requests must be directed to Apple through your App Store purchase history.
+      </p>
+
+      <h2 id="changes">18. Changes to the Service or Terms</h2>
+      <p>
+        We are actively developing Portfoyo and may add, change, or remove features at any time. We may also update
+        these Terms from time to time. When changes are material, we will update the “Last updated” date and, where
+        appropriate, notify you in the app or by email. Your continued use of the Service after changes take effect
+        constitutes acceptance of the updated Terms.
+      </p>
+
+      <h2 id="apple">19. Apple App Store terms</h2>
+      <p>
+        The following applies when you obtain the app through the Apple App Store:
+      </p>
+      <ul>
+        <li>These Terms are between you and Portfoyo only, not with Apple. Apple is not responsible for the app or its
+          content.</li>
+        <li>Your license to use the app is limited to use on Apple-branded devices you own or control, as permitted by
+          the App Store Terms of Service.</li>
+        <li>Apple has no obligation to provide maintenance or support for the app. To the maximum extent permitted by
+          law, Apple has no warranty obligation with respect to the app.</li>
+        <li>Apple is not responsible for addressing any claims by you or any third party relating to the app, including
+          product-liability, legal/regulatory, or intellectual-property claims.</li>
+        <li>Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</li>
+      </ul>
+
+      <h2 id="law">20. Governing law &amp; disputes</h2>
+      <p>
+        These Terms are governed by the laws of the Republic of Türkiye, without regard to its conflict-of-law rules.
+        The courts located in Türkiye will have jurisdiction over any dispute arising from or relating to these Terms
+        or the Service, except where mandatory consumer-protection laws of your country of residence grant you the
+        right to bring proceedings in your local courts. Nothing in this section deprives you of any protection you are
+        entitled to under the mandatory law of your place of residence.
+      </p>
+
+      <h2 id="general">21. General</h2>
+      <ul>
+        <li><b>Entire agreement.</b> These Terms and the Privacy Policy are the entire agreement between you and us
+          regarding the Service and supersede any prior agreements.</li>
+        <li><b>Severability.</b> If any provision is found unenforceable, the remaining provisions remain in full
+          effect.</li>
+        <li><b>No waiver.</b> Our failure to enforce a provision is not a waiver of our right to do so later.</li>
+        <li><b>Assignment.</b> You may not assign these Terms without our consent; we may assign them in connection
+          with a merger, acquisition, or sale of assets.</li>
+      </ul>
+
+      <h2 id="contact">22. Contact</h2>
+      <p>
+        Questions about these Terms? Contact us at
+        <a href="mailto:support@portfoyo.app">support@portfoyo.app</a>.
+      </p>
+    </article>
+  </main>
+
+  <footer class="container">
+    <div class="footer-grid">
+      <a href="index.html" class="wordmark"><span class="mark"><span>P</span></span><span data-brand>Portfoyo</span></a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html#features">Features</a>
+        <a href="coverage.html">Coverage</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#join">Join waitlist</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:support@portfoyo.app">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> <span data-brand>Portfoyo</span> · All rights reserved</span>
+      <span class="disclaimer">Portfoyo is a portfolio tracking tool — not a broker, bank, or investment adviser — and does not provide investment advice. Brokerage connections are read-only. Market data is provided by third parties and may be delayed.</span>
+    </div>
+  </footer>
+
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
 </body>
 </html>

@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Coverage — Brokerages &amp; market data · Portfoyo</title>
+  <meta name="description" content="Which brokerages Portfoyo connects to by region (via SnapTrade), and which markets and asset types are real-time or end-of-day (via Twelve Data)." />
+  <link rel="canonical" href="https://www.portfoyo.app/coverage.html" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0A0E18" />
+  <meta name="color-scheme" content="dark" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Portfoyo" />
+  <meta property="og:title" content="Portfoyo coverage — brokerages &amp; market data" />
+  <meta property="og:description" content="35+ brokerages across 5 regions and 70+ markets with live and end-of-day data — clearly labeled." />
+  <meta property="og:url" content="https://www.portfoyo.app/coverage.html" />
+  <meta property="og:image" content="https://www.portfoyo.app/assets/dashboard.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/svg+xml" href="assets/icon.svg" />
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/icon.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://www.google.com" />
+  <link rel="preconnect" href="https://hlczbeuisgfhdaqdfqae.supabase.co" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="container bar">
+      <a href="index.html" class="wordmark"><span class="mark"><span>P</span></span><span data-brand>Portfoyo</span></a>
+      <div class="nav-right">
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html#features">Features</a>
+          <a href="coverage.html">Coverage</a>
+          <a href="index.html#pricing">Pricing</a>
+          <a href="index.html#faq">FAQ</a>
+        </nav>
+        <a href="index.html#join" class="btn btn-primary nav-cta">Join the waitlist</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ── Page hero ── -->
+  <section class="container page-hero">
+    <p class="breadcrumb"><a href="index.html">Home</a> / Coverage</p>
+    <span class="kicker" style="margin-top:14px">Brokerages &amp; market data</span>
+    <h1>Exactly what Portfoyo connects to, and how fresh the data is.</h1>
+    <p>No vague promises. Here are the brokerages you can link by region, and the markets and asset types behind your prices — each labeled live or end-of-day.</p>
+    <div class="cov-stats">
+      <div class="cov-stat"><b>35+</b><span>Brokerages &amp; exchanges</span></div>
+      <div class="cov-stat"><b>5</b><span>Regions covered</span></div>
+      <div class="cov-stat"><b>70+</b><span>Markets for prices</span></div>
+      <div class="cov-stat"><b>100%</b><span>Read-only connections</span></div>
+    </div>
+  </section>
+
+  <!-- ── Brokerage coverage ── -->
+  <section class="section tight container" id="brokerages">
+    <div class="head reveal" style="margin-bottom:34px">
+      <span class="kicker">Brokerage connections · SnapTrade</span>
+      <h2>Connect your accounts, read-only</h2>
+      <p>Portfoyo links your brokerages through SnapTrade, a regulated account aggregator. Connections are strictly read-only — Portfoyo imports your accounts, positions, and buy/sell history, and can never place a trade or move money.</p>
+    </div>
+
+    <div class="callout reveal" style="margin-bottom:14px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      <p><b>What syncs:</b> accounts &amp; balances, current positions, and your buy/sell transaction history. <b>What never happens:</b> trading, transfers, or any change to your brokerage. Disconnect and wipe a link anytime.</p>
+    </div>
+    <div class="callout gold reveal" style="margin-bottom:34px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+      <p>This is a representative list of SnapTrade's supported institutions. Brokerage support and availability evolve — the live, connectable list always shows in the app at launch.</p>
+    </div>
+
+    <div class="filters reveal" id="region-filters">
+      <button class="filter active" data-f="all">All <span>32</span></button>
+      <button class="filter" data-f="us">United States <span>15</span></button>
+      <button class="filter" data-f="ca">Canada <span>4</span></button>
+      <button class="filter" data-f="eu">Europe &amp; UK <span>5</span></button>
+      <button class="filter" data-f="au">Australia <span>2</span></button>
+      <button class="filter" data-f="in">India <span>2</span></button>
+      <button class="filter" data-f="crypto">Crypto <span>3</span></button>
+      <button class="filter" data-f="global">Global <span>1</span></button>
+    </div>
+
+    <div class="region reveal" data-region="us">
+      <h3>United States <span class="flag">US</span></h3>
+      <p class="sub">The deepest coverage — major brokers, banks, and app-first platforms.</p>
+      <div class="brokers">
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=robinhood.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#00C805;display:none">R</span>Robinhood</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=schwab.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#00A0DF;display:none">C</span>Charles Schwab</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=fidelity.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#368727;display:none">F</span>Fidelity</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=vanguard.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#96151D;display:none">V</span>Vanguard</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=etrade.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#6633CC;display:none">E</span>E*TRADE</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=chase.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#117ACA;display:none">C</span>Chase</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=wellsfargo.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#D71E28;display:none">W</span>Wells Fargo</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=webull.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#1A1A1A;display:none">W</span>Webull US</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=alpaca.markets" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#FFD200;display:none">A</span>Alpaca</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=public.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#5A31F4;display:none">P</span>Public</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=tastytrade.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#00B286;display:none">T</span>tastytrade</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=tradestation.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#0A4D8C;display:none">T</span>TradeStation</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=tradier.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#2E5BFF;display:none">T</span>Tradier</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=moomoo.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#FF6B00;display:none">M</span>Moomoo</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=empower.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#0B6E4F;display:none">E</span>Empower</div>
+      </div>
+    </div>
+
+    <div class="region reveal" data-region="ca">
+      <h3>Canada <span class="flag">CA</span></h3>
+      <p class="sub">The country's leading digital brokerages.</p>
+      <div class="brokers">
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=wealthsimple.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#000000;display:none">W</span>Wealthsimple</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=questrade.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#00A4E4;display:none">Q</span>Questrade</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=td.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#54B848;display:none">T</span>TD Direct Investing</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=webull.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#1A1A1A;display:none">W</span>Webull Canada</div>
+      </div>
+    </div>
+
+    <div class="region reveal" data-region="eu">
+      <h3>Europe &amp; UK <span class="flag">EU</span></h3>
+      <p class="sub">Popular commission-free and self-directed platforms.</p>
+      <div class="brokers">
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=trading212.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#00AABB;display:none">T</span>Trading 212</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=degiro.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#1B3D6E;display:none">D</span>DEGIRO</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=ajbell.co.uk" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#E4002B;display:none">A</span>AJ Bell</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=getbux.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#0A0A23;display:none">B</span>BUX</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=etoro.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#5B9C1E;display:none">E</span>eToro</div>
+      </div>
+    </div>
+
+    <div class="region reveal" data-region="au">
+      <h3>Australia <span class="flag">AU</span></h3>
+      <p class="sub">Local platforms and the big-bank brokerage.</p>
+      <div class="brokers">
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=hellostake.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#0098D8;display:none">S</span>Stake AUS</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=commsec.com.au" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#FFB800;display:none">C</span>CommSec</div>
+      </div>
+    </div>
+
+    <div class="region reveal" data-region="in">
+      <h3>India <span class="flag">IN</span></h3>
+      <p class="sub">Leading discount brokers.</p>
+      <div class="brokers">
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=upstox.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#5A2D82;display:none">U</span>Upstox</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=zerodha.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#387ED1;display:none">Z</span>Zerodha</div>
+      </div>
+    </div>
+
+    <div class="region reveal" data-region="crypto">
+      <h3>Crypto exchanges <span class="flag">Crypto</span></h3>
+      <p class="sub">Pull your crypto holdings alongside everything else.</p>
+      <div class="brokers">
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=coinbase.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#1652F0;display:none">C</span>Coinbase</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=kraken.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#5741D9;display:none">K</span>Kraken</div>
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=binance.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#F0B90B;display:none">B</span>Binance</div>
+      </div>
+    </div>
+
+    <div class="region reveal" data-region="global">
+      <h3>Global <span class="flag">Multi</span></h3>
+      <p class="sub">Brokers operating across multiple regions.</p>
+      <div class="brokers">
+        <div class="broker"><img class="b-logo" src="https://www.google.com/s2/favicons?sz=128&amp;domain=interactivebrokers.com" alt="" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='grid'"><span class="b-mark" style="background:#D81222;display:none">I</span>Interactive Brokers</div>
+      </div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:30px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+      <p>Account types Portfoyo recognizes from connected brokerages: <b>Individual, Roth IRA, Traditional IRA, Joint, Margin, 401(k), and Crypto.</b></p>
+    </div>
+  </section>
+
+  <!-- ── Market-data coverage ── -->
+  <section class="section tight container" id="market-data">
+    <div class="head reveal" style="margin-bottom:30px">
+      <span class="kicker gold">Market data · Twelve Data</span>
+      <h2>Real-time where it counts. End-of-day everywhere else.</h2>
+      <p>Prices come from Twelve Data on a licensed business plan with the rights to display market data in-app. US equities, crypto, forex and commodities stream in real time; 60+ exchanges across the rest of the world settle end-of-day — and every holding shows its own status, so a daily price is never dressed up as live.</p>
+    </div>
+
+    <!-- Tier 1 · Real-time asset classes -->
+    <div class="cov-subhead reveal">
+      <span class="stat-pill live"><span class="d"></span>Real-time</span>
+      <h3>Streaming live</h3>
+      <p>Four asset classes update in real time on our licensed business plan — three of them around the clock.</p>
+    </div>
+    <div class="fresh">
+      <div class="fresh-card reveal">
+        <div class="fc-top">
+          <div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M3 17l5-5 4 3 7-8"/><path d="M16 4h5v5"/></svg></div>
+          <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <h4>US stocks &amp; ETFs</h4>
+        <span class="stat-pill live"><span class="d"></span>Real-time</span>
+        <p class="fc-sub">NYSE &amp; Nasdaq in market hours, plus pre/post-market and full end-of-day history.</p>
+      </div>
+      <div class="fresh-card reveal">
+        <div class="fc-top">
+          <div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5h4a2 2 0 0 1 0 4h-4M9.5 12h4M11 7v10"/></svg></div>
+          <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <h4>Crypto</h4>
+        <span class="stat-pill always"><span class="d"></span>Real-time · 24/7</span>
+        <p class="fc-sub">Major coins and pairs, priced continuously — nights, weekends and holidays included.</p>
+      </div>
+      <div class="fresh-card reveal">
+        <div class="fc-top">
+          <div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M4 8h13l-3-3M20 16H7l3 3"/></svg></div>
+          <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <h4>Forex</h4>
+        <span class="stat-pill always"><span class="d"></span>Real-time · 24/7</span>
+        <p class="fc-sub">Majors, minors and exotic currency pairs, around the clock on trading days.</p>
+      </div>
+      <div class="fresh-card reveal">
+        <div class="fc-top">
+          <div class="fc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M12 2a7 7 0 0 1 7 7c0 5-7 13-7 13S5 14 5 9a7 7 0 0 1 7-7z"/><circle cx="12" cy="9" r="2.3"/></svg></div>
+          <div class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <h4>Commodities</h4>
+        <span class="stat-pill always"><span class="d"></span>Real-time · 24/7</span>
+        <p class="fc-sub">Metals and energy benchmarks (gold, silver, oil &amp; more) priced continuously.</p>
+      </div>
+    </div>
+
+    <!-- Tier 2 · End-of-day global exchanges -->
+    <div class="cov-subhead reveal" style="margin-top:54px">
+      <span class="stat-pill eod"><span class="d"></span>End of day</span>
+      <h3>Global exchange coverage</h3>
+      <p>Stocks &amp; ETFs from 60+ exchanges across 40+ countries settle once a day, after each market closes.</p>
+    </div>
+    <div class="cov-regions">
+      <div class="rcard reveal" data-accent="iris">
+        <div class="rc-h"><span class="rflag">EU</span><h4>Europe &amp; UK</h4></div>
+        <div class="rc-count"><b data-count="30" data-suffix="+">0</b><span>exchanges</span></div>
+        <p class="rc-markets">LSE · Xetra · Euronext · SIX · Borsa İstanbul · Nasdaq Nordics</p>
+        <div class="rc-foot"><span class="stat-pill eod"><span class="d"></span>End of day</span><span class="rc-assets">Stocks · ETFs</span></div>
+      </div>
+      <div class="rcard reveal" data-accent="iris">
+        <div class="rc-h"><span class="rflag">APAC</span><h4>Asia-Pacific</h4></div>
+        <div class="rc-count"><b data-count="15" data-suffix="+">0</b><span>exchanges</span></div>
+        <p class="rc-markets">Tokyo · HKEX · KRX · SGX · Taiwan · Bursa · SET</p>
+        <div class="rc-foot"><span class="stat-pill eod"><span class="d"></span>End of day</span><span class="rc-assets">Stocks · ETFs</span></div>
+      </div>
+      <div class="rcard reveal" data-accent="iris">
+        <div class="rc-h"><span class="rflag">IN</span><h4>India</h4></div>
+        <div class="rc-count"><b data-count="2" data-suffix="">0</b><span>exchanges</span></div>
+        <p class="rc-markets">National Stock Exchange (NSE) · Bombay Stock Exchange (BSE)</p>
+        <div class="rc-foot"><span class="stat-pill eod"><span class="d"></span>End of day</span><span class="rc-assets">Stocks · ETFs</span></div>
+      </div>
+      <div class="rcard reveal" data-accent="iris">
+        <div class="rc-h"><span class="rflag">CA</span><h4>Canada</h4></div>
+        <div class="rc-count"><b data-count="4" data-suffix="">0</b><span>exchanges</span></div>
+        <p class="rc-markets">Toronto (TSX) · TSX Venture · Cboe Canada · CSE</p>
+        <div class="rc-foot"><span class="stat-pill eod"><span class="d"></span>End of day</span><span class="rc-assets">Stocks · ETFs</span></div>
+      </div>
+      <div class="rcard reveal" data-accent="iris">
+        <div class="rc-h"><span class="rflag">LATAM</span><h4>Latin America</h4></div>
+        <div class="rc-count"><b data-count="6" data-suffix="">0</b><span>exchanges</span></div>
+        <p class="rc-markets">B3 Brazil · BMV Mexico · Santiago · Lima · Buenos Aires</p>
+        <div class="rc-foot"><span class="stat-pill eod"><span class="d"></span>End of day</span><span class="rc-assets">Stocks · ETFs</span></div>
+      </div>
+      <div class="rcard reveal" data-accent="iris">
+        <div class="rc-h"><span class="rflag">MEA</span><h4>Middle East &amp; Africa</h4></div>
+        <div class="rc-count"><b data-count="6" data-suffix="">0</b><span>exchanges</span></div>
+        <p class="rc-markets">Tadawul · Tel Aviv · Johannesburg · Qatar · Abu Dhabi</p>
+        <div class="rc-foot"><span class="stat-pill eod"><span class="d"></span>End of day</span><span class="rc-assets">Stocks · ETFs</span></div>
+      </div>
+    </div>
+
+    <div class="callout reveal" style="margin-top:34px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 8v4M12 16h.01"/></svg>
+      <p><b>What you see is what you get.</b> At launch, Portfoyo includes exactly the coverage above on Twelve Data's licensed feed. Every holding is tagged with its real status so you always know whether a price is live or end-of-day.</p>
+    </div>
+
+    <div class="callout up reveal" style="margin-top:14px">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>
+      <p><b>Licensed for display.</b> Portfoyo runs on a business-tier data license that permits showing market data to you in-app — not a consumer hobby key.</p>
+    </div>
+    <p class="sub" style="margin-top:16px;font-family:var(--mono);font-size:0.74rem;color:var(--mute-2)">Exchange availability and real-time vs. end-of-day status can change with data-provider and exchange agreements. Every holding in the app always shows its own current data status. Exchange counts are approximate.</p>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="section tight container">
+    <div class="cta reveal">
+      <span class="kicker" style="justify-content:center;">Early access</span>
+      <h2>See your whole portfolio at launch</h2>
+      <p>Join the waitlist and we'll email you the moment Portfoyo goes live on iOS.</p>
+      <form class="waitlist" data-source="coverage-cta" novalidate>
+        <div class="row">
+          <input type="email" name="email" inputmode="email" autocomplete="email" placeholder="you@email.com" aria-label="Email address" required />
+          <input type="text" name="company" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <button type="submit" class="btn btn-primary">Join the waitlist</button>
+        </div>
+        <div class="form-status" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer class="container">
+    <div class="footer-grid">
+      <a href="index.html" class="wordmark"><span class="mark"><span>P</span></span><span data-brand>Portfoyo</span></a>
+      <nav class="footer-links" aria-label="Footer">
+        <a href="index.html#features">Features</a>
+        <a href="coverage.html">Coverage</a>
+        <a href="index.html#pricing">Pricing</a>
+        <a href="index.html#join">Join waitlist</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+        <a href="mailto:support@portfoyo.app">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© <span id="year">2026</span> <span data-brand>Portfoyo</span> · All rights reserved</span>
+      <span class="disclaimer">Brokerage connectivity is provided by SnapTrade; market data by Twelve Data. Brand names are trademarks of their respective owners and don't imply endorsement. Brokerage connections are read-only. Coverage is subject to change; the in-app list is authoritative.</span>
+    </div>
+  </footer>
+
+  <script>
+    const BRAND = "Portfoyo";
+    const SUPABASE_URL = "https://hlczbeuisgfhdaqdfqae.supabase.co";
+    const SUPABASE_ANON_KEY = "sb_publishable_5ulXNb9aQgww43l8T7EvkA_UXhc4FN2";
+
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    document.querySelectorAll("[data-brand]").forEach(el => { el.textContent = BRAND; });
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    /* Waitlist form → Supabase RPC (shared behavior with the home page). */
+    const utm = (() => {
+      const p = new URLSearchParams(location.search), o = {};
+      ["utm_source","utm_medium","utm_campaign","utm_term","utm_content","ref"].forEach(k => { if (p.get(k)) o[k] = p.get(k); });
+      return o;
+    })();
+    async function joinWaitlist(email, source) {
+      const res = await fetch(`${SUPABASE_URL}/rest/v1/rpc/join_waitlist`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "apikey": SUPABASE_ANON_KEY, "Authorization": `Bearer ${SUPABASE_ANON_KEY}` },
+        body: JSON.stringify({ p_email: email, p_source: source || "coverage", p_referrer: document.referrer || null, p_utm: utm, p_user_agent: navigator.userAgent }),
+      });
+      if (!res.ok) { let d = ""; try { d = (await res.json()).message || ""; } catch (_) {} throw new Error(d || `HTTP ${res.status}`); }
+    }
+    function wireForm(form) {
+      const status = form.querySelector(".form-status");
+      const button = form.querySelector("button[type=submit]");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        const email = form.email.value.trim();
+        status.className = "form-status";
+        if (form.company.value) { return; }
+        if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+          status.textContent = "Please enter a valid email address."; status.className = "form-status err"; return;
+        }
+        const original = button.textContent;
+        button.disabled = true; button.textContent = "Joining…";
+        try {
+          await joinWaitlist(email, form.dataset.source);
+          status.textContent = "You're on the list — we'll email you at launch. 🎉"; status.className = "form-status ok";
+          form.email.value = ""; try { localStorage.setItem("joined_waitlist", "1"); } catch (_) {}
+        } catch (err) {
+          status.textContent = "Something went wrong — try again, or email support@portfoyo.app."; status.className = "form-status err";
+        } finally { button.disabled = false; button.textContent = original; }
+      });
+    }
+    document.querySelectorAll("form.waitlist").forEach(wireForm);
+
+    /* Region filter — show/hide brokerage groups by region. */
+    (function () {
+      const btns = document.querySelectorAll("#region-filters .filter");
+      const regions = document.querySelectorAll(".region[data-region]");
+      btns.forEach(b => b.addEventListener("click", () => {
+        const f = b.dataset.f;
+        btns.forEach(x => x.classList.toggle("active", x === b));
+        regions.forEach(r => {
+          const show = f === "all" || r.dataset.region === f;
+          r.hidden = !show;
+          if (show) r.classList.add("in");   // ensure reveal state when re-shown
+        });
+      }));
+    })();
+
+    /* Count-up for region exchange tallies (runs once, on reveal). */
+    function countUp(el) {
+      if (el.dataset.done) return;
+      el.dataset.done = "1";
+      const target = +el.dataset.count, suffix = el.dataset.suffix || "";
+      if (reduce) { el.textContent = target + suffix; return; }
+      const dur = 1100, start = performance.now();
+      (function tick(now) {
+        const p = Math.min(1, (now - start) / dur);
+        el.textContent = Math.round(target * (1 - Math.pow(1 - p, 3))) + suffix;
+        if (p < 1) requestAnimationFrame(tick);
+      })(start);
+    }
+
+    /* Scroll reveal. */
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          en.target.classList.add("in");
+          en.target.querySelectorAll("[data-count]").forEach(countUp);
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+  </script>
+</body>
+</html>
