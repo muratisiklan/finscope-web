@@ -176,6 +176,8 @@ img { max-width: 100%; }
 .form-note { font-family: var(--mono); font-size: 0.74rem; letter-spacing: 0.02em; color: var(--mute-2);
   margin-top: 13px; display: flex; align-items: center; gap: 8px; }
 .form-note svg { flex: 0 0 auto; }
+.form-note a { color: var(--paper); text-decoration: underline; text-underline-offset: 2px; }
+.form-note a:hover { color: var(--iris); }
 .form-status { margin-top: 12px; font-size: 0.92rem; font-weight: 500; min-height: 1.2em; }
 .form-status.ok { color: var(--up); } .form-status.err { color: var(--down); }
 @media (max-width: 540px) {
